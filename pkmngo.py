@@ -21,7 +21,7 @@ def form():
 
     markupSelect = Markup(select)
 
-    return render_template('form.html', select=markupSelect)
+    return render_template('form.html', pkmnselect=markupSelect)
 
 @application.route('/pokemongo/cp/', methods=["POST"])
 def cp():
