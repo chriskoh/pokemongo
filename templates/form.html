@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Pokemon Go</title>
+	</head>
+
+	<body>
+
+		<h1>Pokemon Go IV</h1>
+
+        <select name="pokemonSelect" form="pkmnSelect">
+            Pokemon:  <option value='039'>039. Jigglypuff</option>
+        </select><br />
+
+        <form method="post" action="{{ url_for('cp') }}" id="pkmnSelect">
+            <input type="submit">
+        </form>
+
+	</body>
+</html>
