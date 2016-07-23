@@ -1,7 +1,7 @@
 # pkmngo.py
 # pokemon go flask application
 
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, Markup
 import json
 
 application = Flask(__name__)
@@ -9,8 +9,19 @@ application = Flask(__name__)
 @application.route('/pokemongo/')
 def form():
 
-#    return "<h1>" + d["039"]["name"] + "</h1>"
-    return render_template('form.html')
+    with open('data/pokemon.json') as data_file:
+        data = json.load(data_file)
+
+    keylist = data.keys()
+    keylist.sort()
+
+    select = ''
+    for key in keylist:
+        select += "<option value='" + key + "'>" + key + ". " + str(data[key]["name"]) + "</option>"
+
+    markupSelect = Markup(select)
+
+    return render_template('form.html', select=markupSelect)
 
 @application.route('/pokemongo/cp/', methods=["POST"])
 def cp():
@@ -31,10 +42,10 @@ def cp():
     pokemon["rateCapture"] = data[pkmnID]["rateCapture"]
     pokemon["rateFlee"] = data[pkmnID]["rateFlee"]
     pokemon["candyToEvolve"] = data[pkmnID]["candyToEvolve"]
-#    pokemon["movement"] = data[pkmnID]["movement"]        
-#    pokemon["quickMoves"] = data[pkmnID]["quickMoves"]
-#    pokemon["cinematicMoves" = data[pkmnID]["cinematicMoves"]
-#    pokemon["family"] = data[pkmnID]["family"]
+    pokemon["movement"] = data[pkmnID]["movement"]        
+    pokemon["quickMoves"] = data[pkmnID]["quickMoves"]
+    pokemon["cinematicMoves"] = data[pkmnID]["cinematicMoves"]
+    pokemon["family"] = data[pkmnID]["family"]
 
     return render_template('cp.html', pokemon=pokemon)
 
