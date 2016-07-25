@@ -38,10 +38,10 @@ def calcStats(baseAttack, baseDefense, baseStamina, level):
         "maxAttack": maxAttack,
         "maxDefense": maxDefense,
         "maxStamina": maxStamina,
-        "minHP": math.floor(minStamina),
-        "maxHP": math.floor(maxStamina),
-        "minCP": max(10,math.floor(math.pow(minStamina,0.5) * minAttack * math.pow(minDefense,0.5) / 10)),
-        "maxCP": max(10,math.floor(math.pow(maxStamina,0.5) * maxAttack * math.pow(maxDefense,0.5) / 10))
+        "minHP": int(math.floor(minStamina)),
+        "maxHP": int(math.floor(maxStamina)),
+        "minCP": int(max(10,math.floor(math.pow(minStamina,0.5) * minAttack * math.pow(minDefense,0.5) / 10))),
+        "maxCP": int(max(10,math.floor(math.pow(maxStamina,0.5) * maxAttack * math.pow(maxDefense,0.5) / 10)))
     }    
 
     return stats

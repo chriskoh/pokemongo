@@ -42,75 +42,45 @@ def cp():
     # get information from form.html
     pkmnID = request.form["pokemonSelect"]
     trainerLVL = request.form["levelSelect"]
+    cpArc = request.form["cpArc"]
+    actualCP = request.form["aCP"]
 
     # load pokemon data as data
     with open('data/pokemon.json') as data_file:
         data = json.load(data_file)
-
-    # load "CP Modifier" as cpm static variables
-#    with open('data/cpm.json') as data_file:
-#        cpm = json.load(data_file)
-
-    # calculate "Additional CP Modifier" (acpm), difference between two CPMs after upgrading
-#    if int(trainerLVL) < 40:
-#        acpm = cpm[str(int(trainerLVL) + 1)]["CpM"] - cpm[trainerLVL]["CpM"]
-#    else:
-#        acpm = 0
-
-    # Excact CP Modifier (ecpm)
-#    ecpm = cpm[trainerLVL]["CpM"] + acpm
 
     # Calculate min and max for stats (Min = 0 IV, Max = 15 IV)
     baseAttack = data[pkmnID]["baseAttack"]
     baseDefense = data[pkmnID]["baseDefense"]
     baseStamina = data[pkmnID]["baseStamina"]
      
-#    minAttack = (baseAttack + 0) * ecpm
-#    minDefense = (baseDefense + 0) * ecpm
-#    minStamina = (baseStamina + 0) * ecpm
-
-#    maxAttack = (baseAttack + 15) * ecpm
-#    maxDefense = (baseDefense + 15) * ecpm
-#    maxStamina = (baseStamina + 15) * ecpm
-
-#    minHP = math.floor(minStamina)
-#    maxHP = math.floor(maxStamina)
-
-#    minCP = max(10,math.floor(math.pow(minStamina,0.5) * minAttack * math.pow(minDefense,0.5) / 10))
-#    maxCP = max(10,math.floor(math.pow(maxStamina,0.5) * maxAttack * math.pow(maxDefense,0.5) / 10)) 
-
-    # this is broken
+    # calclate stats based on pokemons level
+    pkmnLVL = str(int(((float(cpArc)/100)*int(trainerLVL))))
+    currentStats = calcStats(baseAttack, baseDefense, baseStamina, pkmnLVL)
     trainerStats = calcStats(baseAttack, baseDefense, baseStamina, trainerLVL)
+    maxStats = calcStats(baseAttack, baseDefense, baseStamina, "40")
+    ivRatio = int((float(int(actualCP) - currentStats["minCP"])/(currentStats["maxCP"] - currentStats["minCP"]))*100)
+#    ivRatio = int((float(actualCP)/currentStats["maxCP"])*100)
 
     # create dictionary to be passed in to cp.html
-    pokemon = {}    
-    pokemon["id"] = pkmnID
-    pokemon["name"] = data[pkmnID]["name"]
-#    pokemon["ecpm"] = ecpm
-    pokemon["baseStamina"] = baseStamina 
-    pokemon["baseAttack"] = baseAttack
-    pokemon["baseDefense"] = baseDefense
-#    pokemon["minStamina"] = minStamina
-#    pokemon["minAttack"] = minAttack
-#    pokemon["minDefense"] = minDefense
-#    pokemon["maxStamina"] = maxStamina
-#    pokemon["maxAttack"] = trainerStats["minAttack"] 
-#    pokemon["maxDefense"] = maxDefense
-#    pokemon["minHP"] = minHP
-#    pokemon["maxHP"] = maxHP
-#    pokemon["minCP"] = minCP
-#    pokemon["maxCP"] = maxCP
-    pokemon["type1"] = data[pkmnID]["type1"]
-    pokemon["type2"] = data[pkmnID]["type2"]
-    pokemon["rateCapture"] = data[pkmnID]["rateCapture"]
-    pokemon["rateFlee"] = data[pkmnID]["rateFlee"]
-    pokemon["candyToEvolve"] = data[pkmnID]["candyToEvolve"]
-    pokemon["movement"] = data[pkmnID]["movement"]        
-    pokemon["quickMoves"] = data[pkmnID]["quickMoves"]
-    pokemon["cinematicMoves"] = data[pkmnID]["cinematicMoves"]
-    pokemon["family"] = data[pkmnID]["family"]
+    pokemon = {
+        "id": pkmnID,
+        "name": data[pkmnID]["name"],
+        "baseStamina": baseStamina,
+        "baseAttack": baseAttack,
+        "baseDefense": baseDefense,
+        "type1": data[pkmnID]["type1"],
+        "type2": data[pkmnID]["type2"],
+        "rateCapture": data[pkmnID]["rateCapture"],
+        "rateFlee": data[pkmnID]["rateFlee"],
+        "candyToEvolve": data[pkmnID]["candyToEvolve"],
+        "movement": data[pkmnID]["movement"],
+        "quickMoves": data[pkmnID]["quickMoves"],
+        "cinematicMoves": data[pkmnID]["cinematicMoves"],
+        "family": data[pkmnID]["family"]
+    }
  
-    return render_template('cp.html', pokemon=pokemon, trainerStats=trainerStats)
+    return render_template('cp.html', pokemonLVL=pkmnLVL, trainerLVL=trainerLVL, pokemon=pokemon, trainerStats=trainerStats, maxStats=maxStats, currentStats=currentStats, ivRatio=ivRatio)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')

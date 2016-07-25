@@ -5,16 +5,33 @@
         <p>{{pokemon["name"]}} ({{pokemon["id"]}})</p>
         <p>Type: {{pokemon["type1"]}}/{{pokemon["type2"]}}</p>
         <p>Candy to Evolve: {{pokemon["candyToEvolve"]}}</p>
+        <p>Capture Rate: {{pokemon["rateCapture"]}}%</p>
+        <p>Flee Rate: {{pokemon["rateFlee"]}}%</p>
+        <hr>
+        <h2>Base Stats</h2>
         <p>Base Stamina: {{pokemon["baseStamina"]}}</p>
         <p>Base Attack: {{pokemon["baseAttack"]}}</p>
         <p>Base Defense: {{pokemon["baseDefense"]}}</p>
-        <p>Est. Stamina: {{trainerStats["minStamina"]}} - {{trainerStats["maxStamina"]}}</p>
-        <p>Est. Attack: {{trainerStats["minAttack"]}} - {{trainerStats["maxAttack"]}}</p>
-        <p>Est. Defense: {{trainerStats["minDefense"]}} - {{trainerStats["maxDefense"]}}</p>
-        <p>Est. HP: {{trainerStats["minHP"]}} - {{trainerStats["maxHP"]}}</p>
-        <p>Est. CP: {{trainerStats["minCP"]}} - {{trainerStats["maxCP"]}}</p>
-        <p>Capture Rate: {{pokemon["rateCapture"]}}%</p>
-        <p>Flee Rate: {{pokemon["rateFlee"]}}%</p>
-        <p>ECpM: {{trainerStats["ecpm"]}}</p>
+        <hr>
+        <h2>Current: Level ~{{pokemonLVL}} (IV Perfection: {{ivRatio}}%)</h2>
+        <p>CP: {{currentStats["minCP"]}} - {{currentStats["maxCP"]}}</p>
+        <p>HP: {{currentStats["minHP"]}} - {{currentStats["maxHP"]}}</p>
+        <p>Stamina: {{currentStats["minStamina"]}} - {{currentStats["maxStamina"]}}</p>
+        <p>Attack: {{currentStats["minAttack"]}} - {{currentStats["maxAttack"]}}</p>
+        <p>Defense: {{currentStats["minDefense"]}} - {{currentStats["maxDefense"]}}</p>
+        <hr>
+        <h2>Current Upgrade Possible: Level {{trainerLVL}}</h2>
+        <p>CP: {{trainerStats["minCP"]}} - {{trainerStats["maxCP"]}}</p>
+        <p>HP: {{trainerStats["minHP"]}} - {{trainerStats["maxHP"]}}</p>
+        <p>Stamina: {{trainerStats["minStamina"]}} - {{trainerStats["maxStamina"]}}</p>
+        <p>Attack: {{trainerStats["minAttack"]}} - {{trainerStats["maxAttack"]}}</p>
+        <p>Defense: {{trainerStats["minDefense"]}} - {{trainerStats["maxDefense"]}}</p>
+        <hr>
+        <h2>Maximum Upgrade: Level 40</h2>
+        <p>CP: {{maxStats["minCP"]}} - {{maxStats["maxCP"]}}</p>
+        <p>HP: {{maxStats["minHP"]}} - {{maxStats["maxHP"]}}</p>
+        <p>Stamina: {{maxStats["minStamina"]}} - {{maxStats["maxStamina"]}}</p>
+        <p>Attack: {{maxStats["minAttack"]}} - {{maxStats["maxAttack"]}}</p>
+        <p>Defense: {{maxStats["minDefense"]}} - {{maxStats["maxDefense"]}}</p>
     </body>
 </html>
