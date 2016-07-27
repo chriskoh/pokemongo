@@ -23,7 +23,7 @@ def form():
     # create select options based on every pokemon found in pokemon.json
     pkmnSelect = ''
     for key in keylist:
-        pkmnSelect += "<option value='" + key + "'>" + key + ". " + str(data[key]["name"]) + "</option>"
+        pkmnSelect += "<option value='" + key + "'>" + str(data[key]["name"]) + "</option>"
 
     # create select options 1-40 for trainer levels
     lvlSelect = ''
@@ -41,9 +41,9 @@ def cp():
 
     # get information from form.html
     pkmnID = request.form["pokemonSelect"]
-    trainerLVL = request.form["levelSelect"]
-    cpArc = request.form["cpArc"]
     actualCP = request.form["aCP"]
+    hp = request.form["HP"]
+    dust = request.form["DUST"]
 
     # load pokemon data as data
     with open('data/pokemon.json') as data_file:
@@ -55,12 +55,7 @@ def cp():
     baseStamina = data[pkmnID]["baseStamina"]
      
     # calclate stats based on pokemons level
-    pkmnLVL = str(int(((float(cpArc)/100)*int(trainerLVL))))
-    currentStats = calcStats(baseAttack, baseDefense, baseStamina, pkmnLVL)
-    trainerStats = calcStats(baseAttack, baseDefense, baseStamina, trainerLVL)
-    maxStats = calcStats(baseAttack, baseDefense, baseStamina, "40")
-    ivRatio = int((float(int(actualCP) - currentStats["minCP"])/(currentStats["maxCP"] - currentStats["minCP"]))*100)
-#    ivRatio = int((float(actualCP)/currentStats["maxCP"])*100)
+    stats = calcStats(baseAttack, baseDefense, baseStamina, actualCP, hp, dust)
 
     # create dictionary to be passed in to cp.html
     pokemon = {
@@ -80,7 +75,7 @@ def cp():
         "family": data[pkmnID]["family"]
     }
  
-    return render_template('cp.html', pokemonLVL=pkmnLVL, trainerLVL=trainerLVL, pokemon=pokemon, trainerStats=trainerStats, maxStats=maxStats, currentStats=currentStats, ivRatio=ivRatio)
+    return render_template('cp.html', pokemon=pokemon, stats=stats)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')
