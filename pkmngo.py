@@ -25,16 +25,10 @@ def form():
     for key in keylist:
         pkmnSelect += "<option value='" + key + "'>" + str(data[key]["name"]) + "</option>"
 
-    # create select options 1-40 for trainer levels
-    lvlSelect = ''
-    for x in range(1,41):
-        lvlSelect += "<option value='" + str(x) + "'>" + str(x) + "</option>"
-
     # convert string in to mark up text
     pkmnSelectMarkup = Markup(pkmnSelect)
-    lvlSelectMarkup = Markup(lvlSelect)
 
-    return render_template('form.html', pkmnSelect=pkmnSelectMarkup, lvlSelect=lvlSelectMarkup)
+    return render_template('form.html', pkmnSelect=pkmnSelectMarkup)
 
 @application.route('/pokemongo/cp/', methods=["POST"])
 def cp():
