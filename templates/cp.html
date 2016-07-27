@@ -13,25 +13,12 @@
         <p>Base Attack: {{pokemon["baseAttack"]}}</p>
         <p>Base Defense: {{pokemon["baseDefense"]}}</p>
         <hr>
-        <h2>Current: Level ~{{pokemonLVL}} (IV Perfection: {{ivRatio}}%)</h2>
-        <p>CP: {{currentStats["minCP"]}} - {{currentStats["maxCP"]}}</p>
-        <p>HP: {{currentStats["minHP"]}} - {{currentStats["maxHP"]}}</p>
-        <p>Stamina: {{currentStats["minStamina"]}} - {{currentStats["maxStamina"]}}</p>
-        <p>Attack: {{currentStats["minAttack"]}} - {{currentStats["maxAttack"]}}</p>
-        <p>Defense: {{currentStats["minDefense"]}} - {{currentStats["maxDefense"]}}</p>
-        <hr>
-        <h2>Current Upgrade Possible: Level {{trainerLVL}}</h2>
-        <p>CP: {{trainerStats["minCP"]}} - {{trainerStats["maxCP"]}}</p>
-        <p>HP: {{trainerStats["minHP"]}} - {{trainerStats["maxHP"]}}</p>
-        <p>Stamina: {{trainerStats["minStamina"]}} - {{trainerStats["maxStamina"]}}</p>
-        <p>Attack: {{trainerStats["minAttack"]}} - {{trainerStats["maxAttack"]}}</p>
-        <p>Defense: {{trainerStats["minDefense"]}} - {{trainerStats["maxDefense"]}}</p>
-        <hr>
-        <h2>Maximum Upgrade: Level 40</h2>
-        <p>CP: {{maxStats["minCP"]}} - {{maxStats["maxCP"]}}</p>
-        <p>HP: {{maxStats["minHP"]}} - {{maxStats["maxHP"]}}</p>
-        <p>Stamina: {{maxStats["minStamina"]}} - {{maxStats["maxStamina"]}}</p>
-        <p>Attack: {{maxStats["minAttack"]}} - {{maxStats["maxAttack"]}}</p>
-        <p>Defense: {{maxStats["minDefense"]}} - {{maxStats["maxDefense"]}}</p>
+        <h2>Initial Values</h2>
+        <p>Possible Pokemon Levels: {{stats["levels"]}}</p>
+        <p>Possible HP IV(s): {{stats["possible"]}}</p>
+        <p>Possible IV(s) [level, Atk IV, Def IV, Sta IV, % perfect]: {{stats["possibleSET"]}}</p>
+        <p>Best IV Set: {{stats["possibleBEST"]}}</p>
+        <p>Worst IV Set: {{stats["possibleWORST"]}}</p>
+        <p>Avg. IV Perfection: {{stats["pctPerfect"]}}</p>
     </body>
 </html>

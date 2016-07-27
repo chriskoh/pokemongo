@@ -1,27 +1,5 @@
 <html>
 	<head>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
-        <link type="text/css" href="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.js"></script>
-        <script type="text/javascript">
-            $(function(){
-                $("#slider1").roundSlider({
-                    radius: 120,
-                    value: 50,
-                    editableTooltip: false,
-                    circleShape: "half-top",
-                    sliderType: "min-range",
-                    width: 0,
-                    handleSize: "+10"
-                });
-                $(getarc = function(){
-                    var obj1 = $("#slider1").data("roundSlider");
-                    var value = obj1.getValue(1);
-                    $("#cparc").val(value)
-                });
-            });
-
-        </script>
 		<title>Pokemon Go</title>
 	</head>
 
@@ -33,13 +11,11 @@
             {{pkmnSelect}} 
         </select><br /><br />
 
-        Trainer Level: <select name="levelSelect" form="pkmnSelect">
-            {{lvlSelect}}
         </select><br /><br />
         <form method="post" action="{{ url_for('cp') }}" id="pkmnSelect">
-            CP: <input type="text" name="aCP" autocomplete="on"><br /><br />
-            <div id="slider1" class="rslider"> </div>
-            <input id="cparc" type="hidden" name="cpArc"><br />
+            CP: <input type="number" name="aCP"><br /><br />
+            HP: <input type="number" name="HP"><br /><br />
+            Dust: <input type="number" name="DUST"><br /><br /> 
             <input type="submit" onclick="getarc()">
         </form>
 
