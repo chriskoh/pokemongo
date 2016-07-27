@@ -44,7 +44,10 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
                             if float(currentSET[4]) < float(possibleWORST[4]):
                                 possibleWORST = currentSET
 
-        
+    pctPerfect = 0
+    for ivSet in possibleSET:
+        pctPerfect += float(ivSet[4])
+    pctPerfect /= len(possibleSET)
 
 #    # Calculate MIN/MAX
 #    minAttack = (baseAttack + 0) * ecpm
@@ -60,7 +63,8 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
         "possible": possibleHP,
         "possibleSET": possibleSET,
         "possibleBEST": possibleBEST,
-        "possibleWORST": possibleWORST
+        "possibleWORST": possibleWORST,
+        "pctPerfect": pctPerfect
 #        "ecpm": ecpm,
 #        "minAttack": minAttack,
 #        "minDefense": minDefense,

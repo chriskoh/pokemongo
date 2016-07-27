@@ -13,11 +13,12 @@
         <p>Base Attack: {{pokemon["baseAttack"]}}</p>
         <p>Base Defense: {{pokemon["baseDefense"]}}</p>
         <hr>
-        <h2>Current: Level </h2>
-        <p>{{stats["levels"]}}</p>
-        <p>{{stats["possible"]}}</p>
-        <p>{{stats["possibleSET"]}}</p>
-        <p>{{stats["possibleBEST"]}}</p>
-        <p>{{stats["possibleWORST"]}}</p>
+        <h2>Initial Values</h2>
+        <p>Possible Pokemon Levels: {{stats["levels"]}}</p>
+        <p>Possible HP IV(s): {{stats["possible"]}}</p>
+        <p>Possible IV(s) [level, Atk IV, Def IV, Sta IV, % perfect]: {{stats["possibleSET"]}}</p>
+        <p>Best IV Set: {{stats["possibleBEST"]}}</p>
+        <p>Worst IV Set: {{stats["possibleWORST"]}}</p>
+        <p>Avg. IV Perfection: {{stats["pctPerfect"]}}</p>
     </body>
 </html>
