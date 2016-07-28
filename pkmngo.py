@@ -6,35 +6,16 @@ from flask import Flask, render_template, request, url_for, Markup
 import json
 import math
 from pkmngoLib.calculations import *
+from pkmngoLib.markup import *
 
 application = Flask(__name__)
 
 @application.route('/pokemongo/')
 def form():
 
-    # load pokemon.json as data
-    with open('data/pokemon.json') as data_file:
-        data = json.load(data_file)
+    pkmnSelectMarkup = pkmnSelect()
 
-    # get list of keys sorted in numerical order
-    keylist = data.keys()
-    keylist.sort()
-
-    # create select options based on every pokemon found in pokemon.json
-    pkmnSelect = ''
-    for key in keylist:
-        pkmnSelect += "<option value='" + key + "'>" + str(data[key]["name"]) + "</option>"
-
-    # create select options 1-40 for trainer levels
-    lvlSelect = ''
-    for x in range(1,41):
-        lvlSelect += "<option value='" + str(x) + "'>" + str(x) + "</option>"
-
-    # convert string in to mark up text
-    pkmnSelectMarkup = Markup(pkmnSelect)
-    lvlSelectMarkup = Markup(lvlSelect)
-
-    return render_template('form.html', pkmnSelect=pkmnSelectMarkup, lvlSelect=lvlSelectMarkup)
+    return render_template('form.html', pkmnSelect=pkmnSelectMarkup)
 
 @application.route('/pokemongo/cp/', methods=["POST"])
 def cp():
