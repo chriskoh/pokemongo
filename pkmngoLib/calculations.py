@@ -17,6 +17,8 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
 
     levels = upgrade[dust]["level"]
 
+    BEST = ["40.5", 15, 15, 15, 100]
+    WORST = ["40.5", 0, 0, 0, 0]
     possibleSET = []
     possibleBEST = ''
     possibleWORST = ''
@@ -49,14 +51,12 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
         pctPerfect += float(ivSet[4])
     pctPerfect /= len(possibleSET)
 
-#    # Calculate MIN/MAX
-#    minAttack = (baseAttack + 0) * ecpm
-#    minDefense = (baseDefense + 0) * ecpm
-#    minStamina = (baseStamina + 0) * ecpm
-
-#    maxAttack = (baseAttack + 15) * ecpm
-#    maxDefense = (baseDefense + 15) * ecpm
-#    maxStamina = (baseStamina + 15) * ecpm
+    BESTCP = 1
+    WORSTCP = 1
+    BESTCP = max(10,math.floor((baseAttack + BEST[1]) * math.pow((baseDefense + BEST[2]),0.5) * math.pow((baseStamina + BEST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10))
+    WORSTCP = max(10,math.floor((baseAttack + WORST[1]) * math.pow((baseDefense + WORST[2]),0.5) * math.pow((baseStamina + WORST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10))
+    possibleBESTCP = max(10,math.floor((baseAttack + possibleBEST[1]) * math.pow((baseDefense + possibleBEST[2]),0.5) * math.pow((baseStamina + possibleBEST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10))
+    possibleWORSTCP = max(10,math.floor((baseAttack + possibleWORST[1]) * math.pow((baseDefense + possibleWORST[2]),0.5) * math.pow((baseStamina + possibleWORST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10))
 
     stats = {
         "levels": levels,
@@ -64,7 +64,13 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
         "possibleSET": possibleSET,
         "possibleBEST": possibleBEST,
         "possibleWORST": possibleWORST,
-        "pctPerfect": pctPerfect
+        "pctPerfect": pctPerfect,
+        "possibleBESTCP": possibleBESTCP,
+        "possibleWORSTCP": possibleWORSTCP,
+        "BEST": BEST,
+        "WORST": WORST,
+        "BESTCP": BESTCP,
+        "WORSTCP": WORSTCP
 #        "ecpm": ecpm,
 #        "minAttack": minAttack,
 #        "minDefense": minDefense,
