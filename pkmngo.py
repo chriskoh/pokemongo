@@ -38,6 +38,7 @@ def cp():
      
     # calclate stats based on pokemons level
     stats = calcStats(baseAttack, baseDefense, baseStamina, actualCP, hp, dust)
+    ivSets = printIVs(stats)
 
     # create dictionary to be passed in to cp.html
     pokemon = {
@@ -59,7 +60,7 @@ def cp():
 
     pkmnSelectMarkup = pkmnSelect()
  
-    return render_template('cp.html', pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
+    return render_template('cp.html', ivSets=ivSets, pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')

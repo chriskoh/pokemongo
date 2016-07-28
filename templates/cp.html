@@ -45,15 +45,30 @@
             <p>Base Attack: {{pokemon["baseAttack"]}}</p>
             <p>Base Defense: {{pokemon["baseDefense"]}}</p>
             <hr>
-            <h2>Initial Values</h2>
-            <p>Possible Pokemon Levels: {{stats["levels"]}}</p>
-            <p>Possible HP IV(s): {{stats["possible"]}}</p>
-            <p>Possible IV(s) [level, Atk IV, Def IV, Sta IV, % perfect]: {{stats["possibleSET"]}}</p>
-            <p>BEST POSSIBLE: {{stats["BEST"]}} {{stats["BESTCP"]}}</p>
-            <p>Best IV Set: {{stats["possibleBEST"]}} {{stats["possibleBESTCP"]}}</p>
-            <p>Worst IV Set: {{stats["possibleWORST"]}} {{stats["possibleWORSTCP"]}}</p>
-            <p>WORST POSSIBLE: {{stats["WORST"]}} {{stats["WORSTCP"]}}</p>
-            <p>Avg. IV Perfection: {{stats["pctPerfect"]}}</p>
+            <h2>Initial Values ({{stats["pctPerfect"]}}% Perfect)</h2>
+
+            <table>
+                <tr>
+                    <th>{{pokemon["name"]}}</th>
+                    <th>CP</th>
+                    <th>HP</th>
+                    <th>Attack</th>
+                    <th>Defense</th>
+                    <th>Stamina</th>
+                </tr>
+                {{ivSets["cpSets"]}}
+            </table>
+            <table>
+
+                <tr>
+                    <th>Level</th>
+                    <th>Attack IV</th>
+                    <th>Defense IV</th>
+                    <th>Stamina IV</th>
+                    <th>Perfect</th>
+                <tr>
+                {{ivSets["ivSets"]}}
+            </table>
         </div>
     </body>
 </html>

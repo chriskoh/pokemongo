@@ -24,3 +24,70 @@ def pkmnSelect():
     pkmnSelectMarkup = Markup(pkmnSelect)
 
     return pkmnSelectMarkup
+
+def printIVs(stats):
+
+    
+    ivRow = ''
+    for ivSet in stats["possibleSET"]:
+        ivRow += '<tr>' \
+                   '<td>' + str(ivSet[0]) + '</td>' \
+                   '<td>' + str(ivSet[1]) + '</td>' \
+                   '<td>' + str(ivSet[2]) + '</td>' \
+                   '<td>' + str(ivSet[3]) + '</td>' \
+                   '<td>' + str(ivSet[4]) + '%</td>' \
+               '</tr>'
+
+    cpRow = '<tr>' \
+                '<td>' + str('Best Possible') + '</td>' \
+                '<td>' + str(stats["BESTCP"]) + '</td>' \
+                '<td>' + str('hp') + '</td>' \
+                '<td>' + str(stats["BEST"][1]) + '</td>' \
+                '<td>' + str(stats["BEST"][2]) + '</td>' \
+                '<td>' + str(stats["BEST"][3]) + '</td>' \
+            '</tr>' \
+            '<tr>' \
+                '<td>' + str('Best IV Set') + '</td>' \
+                '<td>' + str(stats["possibleBESTCP"]) + '</td>' \
+                '<td>' + str('hp') + '</td>' \
+                '<td>' + str(stats["possibleBEST"][1]) + '</td>' \
+                '<td>' + str(stats["possibleBEST"][2]) + '</td>' \
+                '<td>' + str(stats["possibleBEST"][3]) + '</td>' \
+            '</tr>' \
+            '<tr>' \
+                '<td>' + str('Worst IV Set') + '</td>' \
+                '<td>' + str(stats["possibleWORSTCP"]) + '</td>' \
+                '<td>' + str('hp') + '</td>' \
+                '<td>' + str(stats["possibleWORST"][1]) + '</td>' \
+                '<td>' + str(stats["possibleWORST"][2]) + '</td>' \
+                '<td>' + str(stats["possibleWORST"][3]) + '</td>' \
+            '</tr>' \
+            '<tr>' \
+                '<td>' + str('Worst Possible') + '</td>' \
+                '<td>' + str(stats["WORSTCP"]) + '</td>' \
+                '<td>' + str('hp') + '</td>' \
+                '<td>' + str(stats["WORST"][1]) + '</td>' \
+                '<td>' + str(stats["WORST"][2]) + '</td>' \
+                '<td>' + str(stats["WORST"][3]) + '</td>' \
+            '</tr>'
+
+    ivRowMarkup = Markup(ivRow)
+    cpRowMarkup = Markup(cpRow)
+
+    markups = {
+        "ivSets": ivRowMarkup,
+        "cpSets": cpRowMarkup
+    }
+
+    return markups 
+
+
+
+
+
+
+
+
+
+
+
