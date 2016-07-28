@@ -5,15 +5,16 @@
 
 import math
 import json
+import urllib
 
 def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
 
     # load "CP Modifier" as cpm static variables
-    with open('/home/crees/pkmngo/data/cpm.json') as data_file:
-        cpm = json.load(data_file)
+    response = urllib.urlopen('http://chriskoh.io/static/cpm.json')
+    cpm = json.load(response)
 
-    with open('/home/crees/pkmngo/data/upgrade.json') as data_file:
-        upgrade = json.load(data_file)
+    response = urllib.urlopen('http://chriskoh.io/static/upgrade.json')
+    upgrade = json.load(response)
 
     levels = upgrade[dust]["level"]
 
@@ -71,17 +72,6 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
         "WORST": WORST,
         "BESTCP": BESTCP,
         "WORSTCP": WORSTCP
-#        "ecpm": ecpm,
-#        "minAttack": minAttack,
-#        "minDefense": minDefense,
-#        "minStamina": minStamina,
-#        "maxAttack": maxAttack,
-#        "maxDefense": maxDefense,
-#        "maxStamina": maxStamina,
-#        "minHP": int(math.floor(minStamina)),
-#        "maxHP": int(math.floor(maxStamina)),
-#        "minCP": int(max(10,math.floor(math.pow(minStamina,0.5) * minAttack * math.pow(minDefense,0.5) / 10))),
-#        "maxCP": int(max(10,math.floor(math.pow(maxStamina,0.5) * maxAttack * math.pow(maxDefense,0.5) / 10)))
     }    
 
     return stats

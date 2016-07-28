@@ -1,14 +1,15 @@
 # markup.py
 # library for html markup
 
+import urllib
 import json
 from flask import Markup
 
 def pkmnSelect():
 
     # load pokemon.json as data
-    with open('/home/crees/pkmngo/data/pokemon.json') as data_file:
-        data = json.load(data_file)
+    response = urllib.urlopen('http://chriskoh.io/static/pokemon.json')
+    data = json.load(response)
 
     # get list of keys sorted in numerical order
     keylist = data.keys()

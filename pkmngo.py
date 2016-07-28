@@ -5,6 +5,7 @@ import sys
 from flask import Flask, render_template, request, url_for, Markup
 import json
 import math
+import urllib
 from pkmngoLib.calculations import *
 from pkmngoLib.markup import *
 
@@ -27,8 +28,8 @@ def cp():
     dust = request.form["DUST"]
 
     # load pokemon data as data
-    with open('data/pokemon.json') as data_file:
-        data = json.load(data_file)
+    response = urllib.urlopen('http://chriskoh.io/static/pokemon.json')
+    data = json.load(response)
 
     # Calculate min and max for stats (Min = 0 IV, Max = 15 IV)
     baseAttack = data[pkmnID]["baseAttack"]
@@ -55,8 +56,10 @@ def cp():
         "cinematicMoves": data[pkmnID]["cinematicMoves"],
         "family": data[pkmnID]["family"]
     }
+
+    pkmnSelectMarkup = pkmnSelect()
  
-    return render_template('cp.html', pokemon=pokemon, stats=stats)
+    return render_template('cp.html', pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')
