@@ -1,26 +1,56 @@
 <html>
     <head>
+        <title>Pokemon Go</title>
     </head>
     <body>
-        <p>{{pokemon["name"]}} ({{pokemon["id"]}})</p>
-        <p>Type: {{pokemon["type1"]}}/{{pokemon["type2"]}}</p>
-        <p>Candy to Evolve: {{pokemon["candyToEvolve"]}}</p>
-        <p>Capture Rate: {{pokemon["rateCapture"]}}%</p>
-        <p>Flee Rate: {{pokemon["rateFlee"]}}%</p>
-        <hr>
-        <h2>Base Stats</h2>
-        <p>Base Stamina: {{pokemon["baseStamina"]}}</p>
-        <p>Base Attack: {{pokemon["baseAttack"]}}</p>
-        <p>Base Defense: {{pokemon["baseDefense"]}}</p>
-        <hr>
-        <h2>Initial Values</h2>
-        <p>Possible Pokemon Levels: {{stats["levels"]}}</p>
-        <p>Possible HP IV(s): {{stats["possible"]}}</p>
-        <p>Possible IV(s) [level, Atk IV, Def IV, Sta IV, % perfect]: {{stats["possibleSET"]}}</p>
-        <p>BEST POSSIBLE: {{stats["BEST"]}} {{stats["BESTCP"]}}</p>
-        <p>Best IV Set: {{stats["possibleBEST"]}} {{stats["possibleBESTCP"]}}</p>
-        <p>Worst IV Set: {{stats["possibleWORST"]}} {{stats["possibleWORSTCP"]}}</p>
-        <p>WORST POSSIBLE: {{stats["WORST"]}} {{stats["WORSTCP"]}}</p>
-        <p>Avg. IV Perfection: {{stats["pctPerfect"]}}</p>
+        <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
+
+            <img height="750" width="500" src="http://i.imgur.com/iD9I26T.png" border="0" />
+
+            <div style="position: absolute; left: 160px; top: 370px;">
+                <select style="font-size: 25px; height: 45px; width: 200px;" name="pokemonSelect" autofocus>
+                    {{pkmnSelect}}
+                </select>
+            </div>
+
+            <div style="position: absolute; left: 170px; top: 25px;">
+                <input style="font-size: 25px; height: 45px; width: 160px;" type="number" name="aCP" placeholder="CP">
+            </div>
+
+            <div style="position: absolute; left: 190px; top: 440px;">
+                <input style="width: 125px; height: 25px;" type="number" name="HP" placeholder="HP">
+            </div>
+
+            <div style="position: absolute; left: 265px; top: 677px;">
+                <input style="height: 35px;" type="number" name="DUST" placeholder="Dust">
+            </div>
+
+            <div style="position: absolute; left: 0px; top: 0px;">
+            </div>
+
+            <br /><input type="submit">
+        </form>
+        <div>
+            <p>{{pokemon["name"]}} ({{pokemon["id"]}})</p>
+            <p>Type: {{pokemon["type1"]}}/{{pokemon["type2"]}}</p>
+            <p>Candy to Evolve: {{pokemon["candyToEvolve"]}}</p>
+            <p>Capture Rate: {{pokemon["rateCapture"]}}%</p>
+            <p>Flee Rate: {{pokemon["rateFlee"]}}%</p>
+            <hr>
+            <h2>Base Stats</h2>
+            <p>Base Stamina: {{pokemon["baseStamina"]}}</p>
+            <p>Base Attack: {{pokemon["baseAttack"]}}</p>
+            <p>Base Defense: {{pokemon["baseDefense"]}}</p>
+            <hr>
+            <h2>Initial Values</h2>
+            <p>Possible Pokemon Levels: {{stats["levels"]}}</p>
+            <p>Possible HP IV(s): {{stats["possible"]}}</p>
+            <p>Possible IV(s) [level, Atk IV, Def IV, Sta IV, % perfect]: {{stats["possibleSET"]}}</p>
+            <p>BEST POSSIBLE: {{stats["BEST"]}} {{stats["BESTCP"]}}</p>
+            <p>Best IV Set: {{stats["possibleBEST"]}} {{stats["possibleBESTCP"]}}</p>
+            <p>Worst IV Set: {{stats["possibleWORST"]}} {{stats["possibleWORSTCP"]}}</p>
+            <p>WORST POSSIBLE: {{stats["WORST"]}} {{stats["WORSTCP"]}}</p>
+            <p>Avg. IV Perfection: {{stats["pctPerfect"]}}</p>
+        </div>
     </body>
 </html>
