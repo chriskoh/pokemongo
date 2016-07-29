@@ -6,6 +6,7 @@ from flask import Flask, render_template, request, url_for, Markup
 import json
 import math
 import urllib
+import plotly
 from pkmngoLib.calculations import *
 from pkmngoLib.markup import *
 
