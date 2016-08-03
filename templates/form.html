@@ -1,6 +1,6 @@
 <html>
 	<head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" type="text/css" href="http://chriskoh.io/static/style.css">
 		<title>Pokemon Go</title>
 	</head>
 
@@ -10,27 +10,24 @@
         <div id="pokemon">
             <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
 
-                <img height="750" width="500" src="http://i.imgur.com/iD9I26T.png" border="0" />
+                <img height="750" width="500" border="0" src="http://chriskoh.io/images/background_fire.png" />
 
-                <div style="position: absolute; left: 160px; top: 370px;">
-                    <select style="font-size: 25px; height: 45px; width: 200px;" name="pokemonSelect" autofocus>
+                <div id="pkmnselectdiv">
+                    <select id="pkmnselectbox" name="pokemonSelect" autofocus>
                         {{pkmnSelect}} 
                     </select>
                 </div>
 
-                <div style="position: absolute; left: 170px; top: 25px;">
-                    <input style="font-size: 25px; height: 45px; width: 160px;" type="number" name="aCP" placeholder="CP">
+                <div id="cpdiv">
+                    <input id="cpbox" type="number" name="aCP" placeholder="CP">
                 </div>
 
-                <div style="position: absolute; left: 190px; top: 440px;">
-                    <input style="width: 125px; height: 25px;" type="number" name="HP" placeholder="HP">
+                <div id="hpdiv">
+                    <input id="hpbox" type="number" name="HP" placeholder="HP">
                 </div>
 
-                <div style="position: absolute; left: 265px; top: 677px;">
-                    <input style="height: 35px;" type="number" name="DUST" placeholder="Dust"> 
-                </div>
-
-                <div style="position: absolute; left: 0px; top: 0px;">
+                <div id="dustdiv">
+                    <input id="dustbox" type="number" name="DUST" placeholder="Dust"> 
                 </div>
 
                 <br /><input type="submit" >

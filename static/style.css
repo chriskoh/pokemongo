@@ -6,3 +6,40 @@
     display: inline-block;
     vertical-align: top;
 }
+#pkmnselectdiv {
+    position: absolute;
+    left: 160px;
+    top: 370px;   
+}
+#cpdiv {
+    position: absolute;
+    left: 170px;
+    top: 25px;
+}
+#hpdiv {
+    position: absolute;
+    left: 190px;
+    top: 440px;
+}
+#dustdiv{
+    position: absolute;
+    left: 265px;
+    top: 677px;
+} 
+#pkmnselectbox {
+    font-size: 25px;
+    height: 45px;
+    width: 200px;
+}
+#cpbox {
+    font-size: 25px;
+    height: 45px;
+    width: 160px;
+}
+#hpbox {
+    width: 125px;
+    height: 25px;
+}
+#dustbox {
+    height: 35px;
+}
