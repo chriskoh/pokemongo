@@ -31,6 +31,7 @@
             </form>
         </div>
         <div id="data">
+<!--
             <p>{{pokemon["name"]}} ({{pokemon["id"]}})</p>
             <p>Type: {{pokemon["type1"]}}/{{pokemon["type2"]}}</p>
             <p>Candy to Evolve: {{pokemon["candyToEvolve"]}}</p>
@@ -42,19 +43,23 @@
             <p>Base Attack: {{pokemon["baseAttack"]}}</p>
             <p>Base Defense: {{pokemon["baseDefense"]}}</p>
             <hr>
+-->
             <h2>Initial Values ({{stats["pctPerfect"]}}% Perfect)</h2>
 
             <table>
                 <tr>
                     <th>{{pokemon["name"]}}</th>
                     <th>CP</th>
-                    <th>HP</th>
+                    <th>HP {{evname}}</th>
                     <th>Attack</th>
                     <th>Defense</th>
                     <th>Stamina</th>
                 </tr>
                 {{ivSets["cpSets"]}}
             </table><br />
+            {{ev1}}
+            {{ev2}}
+<!--
             <table>
 
                 <tr>
@@ -66,6 +71,7 @@
                 <tr>
                 {{ivSets["ivSets"]}}
             </table>
+-->
         </div>
     </body>
 </html>

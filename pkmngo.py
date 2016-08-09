@@ -41,6 +41,26 @@ def cp():
     stats = calcStats(baseAttack, baseDefense, baseStamina, actualCP, hp, dust)
     ivSets = printIVs(stats)
 
+    #evolves (if possible)
+    if data[pkmnID]["candyToEvolve"] != 0:
+        evolveID1 = int(pkmnID) + 1
+        evolveID1 = "%03d" % (evolveID1)
+        evolveID1Name = data[evolveID1]["name"]
+        evolveID1Stats = calcEvolveStats(data[evolveID1]["baseAttack"], data[evolveID1]["baseDefense"], data[evolveID1]["baseStamina"], evolveID1Name, stats["possibleBEST"], stats["possibleWORST"])
+        evolveID1ivSets = printEvolveIVs(evolveID1Stats, evolveID1Name)
+        
+        if data[evolveID1]["candyToEvolve"] != 0:
+            evolveID2 = int(evolveID1) + 1
+            evolveID2 = "%03d" % (evolveID2)
+            evolveID2Name = data[evolveID2]["name"]
+            evolveID2Stats = calcEvolveStats(data[evolveID2]["baseAttack"], data[evolveID2]["baseDefense"], data[evolveID2]["baseStamina"], evolveID2Name, stats["possibleBEST"], stats["possibleWORST"])
+            evolveID2ivSets = printEvolveIVs(evolveID2Stats, evolveID2Name)
+        else:
+            evolveID2ivSets = ''
+
+    else:
+        evolveID1ivSets = ''
+
     # create dictionary to be passed in to cp.html
     pokemon = {
         "id": pkmnID,
@@ -61,7 +81,7 @@ def cp():
 
     pkmnSelectMarkup = pkmnSelect()
  
-    return render_template('cp.html', ivSets=ivSets, pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
+    return render_template('cp.html', ev1=evolveID1ivSets, ev2=evolveID2ivSets, ivSets=ivSets, pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')

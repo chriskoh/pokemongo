@@ -7,6 +7,42 @@ import math
 import json
 import urllib
 
+def calcEvolveStats(baseAttack, baseDefense, baseStamina, name, possibleBEST, possibleWORST):
+
+    # load "CP Modifier" as cpm static variables
+    response = urllib.urlopen('http://chriskoh.io/static/cpm.json')
+    cpm = json.load(response)
+
+    BEST = ["40.5", 15, 15, 15, 100]
+    WORST = ["40.5", 0, 0, 0, 0]
+
+    BESTCP = int(max(10,math.floor((baseAttack + BEST[1]) * math.pow((baseDefense + BEST[2]),0.5) * math.pow((baseStamina + BEST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10)))
+    WORSTCP = int(max(10,math.floor((baseAttack + WORST[1]) * math.pow((baseDefense + WORST[2]),0.5) * math.pow((baseStamina + WORST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10)))
+    possibleBESTCP = int(max(10,math.floor((baseAttack + possibleBEST[1]) * math.pow((baseDefense + possibleBEST[2]),0.5) * math.pow((baseStamina + possibleBEST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10)))
+    possibleWORSTCP = int(max(10,math.floor((baseAttack + possibleWORST[1]) * math.pow((baseDefense + possibleWORST[2]),0.5) * math.pow((baseStamina + possibleWORST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10)))
+
+    BESTHP = int(cpm["40.5"]["CpM"] * (baseStamina + BEST[3]))
+    WORSTHP = int(cpm["40.5"]["CpM"] * (baseStamina + WORST[3]))
+    possibleBESTHP = int(cpm["40.5"]["CpM"] * (baseStamina + possibleBEST[3]))
+    possibleWORSTHP = int(cpm["40.5"]["CpM"] * (baseStamina + possibleWORST[3]))
+
+    stats = {
+        "possibleBEST": possibleBEST,
+        "possibleWORST": possibleWORST,
+        "possibleBESTCP": possibleBESTCP,
+        "possibleWORSTCP": possibleWORSTCP,
+        "BEST": BEST,
+        "WORST": WORST,
+        "BESTCP": BESTCP,
+        "WORSTCP": WORSTCP,
+        "BESTHP": BESTHP,
+        "WORSTHP": WORSTHP,
+        "possibleBESTHP": possibleBESTHP,
+        "possibleWORSTHP": possibleWORSTHP
+    }    
+
+    return stats
+
 def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
 
     # load "CP Modifier" as cpm static variables
@@ -54,10 +90,15 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
 
     BESTCP = 1
     WORSTCP = 1
-    BESTCP = max(10,math.floor((baseAttack + BEST[1]) * math.pow((baseDefense + BEST[2]),0.5) * math.pow((baseStamina + BEST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10))
-    WORSTCP = max(10,math.floor((baseAttack + WORST[1]) * math.pow((baseDefense + WORST[2]),0.5) * math.pow((baseStamina + WORST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10))
-    possibleBESTCP = max(10,math.floor((baseAttack + possibleBEST[1]) * math.pow((baseDefense + possibleBEST[2]),0.5) * math.pow((baseStamina + possibleBEST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10))
-    possibleWORSTCP = max(10,math.floor((baseAttack + possibleWORST[1]) * math.pow((baseDefense + possibleWORST[2]),0.5) * math.pow((baseStamina + possibleWORST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10))
+    BESTCP = int(max(10,math.floor((baseAttack + BEST[1]) * math.pow((baseDefense + BEST[2]),0.5) * math.pow((baseStamina + BEST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10)))
+    WORSTCP = int(max(10,math.floor((baseAttack + WORST[1]) * math.pow((baseDefense + WORST[2]),0.5) * math.pow((baseStamina + WORST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10)))
+    possibleBESTCP = int(max(10,math.floor((baseAttack + possibleBEST[1]) * math.pow((baseDefense + possibleBEST[2]),0.5) * math.pow((baseStamina + possibleBEST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10)))
+    possibleWORSTCP = int(max(10,math.floor((baseAttack + possibleWORST[1]) * math.pow((baseDefense + possibleWORST[2]),0.5) * math.pow((baseStamina + possibleWORST[3]),0.5) * math.pow((cpm["40.5"]["CpM"]),2) / 10)))
+
+    BESTHP = int(cpm["40.5"]["CpM"] * (baseStamina + BEST[3]))
+    WORSTHP = int(cpm["40.5"]["CpM"] * (baseStamina + WORST[3]))
+    possibleBESTHP = int(cpm["40.5"]["CpM"] * (baseStamina + possibleBEST[3]))
+    possibleWORSTHP = int(cpm["40.5"]["CpM"] * (baseStamina + possibleWORST[3]))
 
     stats = {
         "levels": levels,
@@ -71,7 +112,11 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
         "BEST": BEST,
         "WORST": WORST,
         "BESTCP": BESTCP,
-        "WORSTCP": WORSTCP
+        "WORSTCP": WORSTCP,
+        "BESTHP": BESTHP,
+        "WORSTHP": WORSTHP,
+        "possibleBESTHP": possibleBESTHP,
+        "possibleWORSTHP": possibleWORSTHP
     }    
 
     return stats
