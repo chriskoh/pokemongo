@@ -60,6 +60,7 @@ def cp():
 
     else:
         evolveID1ivSets = ''
+        evolveID2ivSets = ''
 
     # create dictionary to be passed in to cp.html
     pokemon = {

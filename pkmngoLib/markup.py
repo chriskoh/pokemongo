@@ -26,7 +26,6 @@ def pkmnSelect():
     return pkmnSelectMarkup
 
 def printEvolveIVs(stats, name):
-#   possibleBEST, possibleBESTCP, BEST, BESTCP
 
     cpRow = '<table>' \
                 '<tr>' \
@@ -36,37 +35,43 @@ def printEvolveIVs(stats, name):
                     '<th>Attack</th>' \
                     '<th>Defense</th>' \
                     '<th>Stamina</th>' \
+                    '<th>Perfection</th>' \
+                '</tr>' \
                 '<tr>' \
                     '<td>' + str('Best Possible') + '</td>' \
-                    '<td>' + str(stats["BESTCP"]) + '</td>' \
-                    '<td>' + str(stats["BESTHP"]) + '</td>' \
-                    '<td>' + str(stats["BEST"][1]) + '</td>' \
-                    '<td>' + str(stats["BEST"][2]) + '</td>' \
-                    '<td>' + str(stats["BEST"][3]) + '</td>' \
+                    '<td class="data">' + str(stats["BESTCP"]) + '</td>' \
+                    '<td class="data">' + str(stats["BESTHP"]) + '</td>' \
+                    '<td class="data">' + str(stats["BEST"][1]) + '</td>' \
+                    '<td class="data">' + str(stats["BEST"][2]) + '</td>' \
+                    '<td class="data">' + str(stats["BEST"][3]) + '</td>' \
+                    '<td class="data">100%</td>' \
                 '</tr>' \
                 '<tr>' \
                     '<td>' + str('Best IV Set') + '</td>' \
-                    '<td>' + str(stats["possibleBESTCP"]) + '</td>' \
-                    '<td>' + str(stats["possibleBESTHP"]) + '</td>' \
-                    '<td>' + str(stats["possibleBEST"][1]) + '</td>' \
-                    '<td>' + str(stats["possibleBEST"][2]) + '</td>' \
-                    '<td>' + str(stats["possibleBEST"][3]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleBESTCP"]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleBESTHP"]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleBEST"][1]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleBEST"][2]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleBEST"][3]) + '</td>' \
+                    '<td class="data">' + str("%.2f" % (((stats["possibleBEST"][1] + stats["possibleBEST"][2] + stats["possibleBEST"][3])/float(45))*100)) + '%</td>' \
                 '</tr>' \
                 '<tr>' \
                     '<td>' + str('Worst IV Set') + '</td>' \
-                    '<td>' + str(stats["possibleWORSTCP"]) + '</td>' \
-                    '<td>' + str(stats["possibleWORSTHP"]) + '</td>' \
-                    '<td>' + str(stats["possibleWORST"][1]) + '</td>' \
-                    '<td>' + str(stats["possibleWORST"][2]) + '</td>' \
-                    '<td>' + str(stats["possibleWORST"][3]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleWORSTCP"]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleWORSTHP"]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleWORST"][1]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleWORST"][2]) + '</td>' \
+                    '<td class="data">' + str(stats["possibleWORST"][3]) + '</td>' \
+                    '<td class="data">' + str("%.2f" % (((stats["possibleWORST"][1] + stats["possibleWORST"][2] + stats["possibleWORST"][3])/float(45))*100)) + '%</td>' \
                 '</tr>' \
                 '<tr>' \
                     '<td>' + str('Worst Possible') + '</td>' \
-                    '<td>' + str(stats["WORSTCP"]) + '</td>' \
-                    '<td>' + str(stats["WORSTHP"]) + '</td>' \
-                    '<td>' + str(stats["WORST"][1]) + '</td>' \
-                    '<td>' + str(stats["WORST"][2]) + '</td>' \
-                    '<td>' + str(stats["WORST"][3]) + '</td>' \
+                    '<td class="data">' + str(stats["WORSTCP"]) + '</td>' \
+                    '<td class="data">' + str(stats["WORSTHP"]) + '</td>' \
+                    '<td class="data">' + str(stats["WORST"][1]) + '</td>' \
+                    '<td class="data">' + str(stats["WORST"][2]) + '</td>' \
+                    '<td class="data">' + str(stats["WORST"][3]) + '</td>' \
+                    '<td class="data">0%</td>' \
                 '</tr>' \
             '</table><br />'
 
@@ -90,35 +95,39 @@ def printIVs(stats):
 
     cpRow = '<tr>' \
                 '<td>' + str('Best Possible') + '</td>' \
-                '<td>' + str(stats["BESTCP"]) + '</td>' \
-                '<td>' + str(stats["BESTHP"]) + '</td>' \
-                '<td>' + str(stats["BEST"][1]) + '</td>' \
-                '<td>' + str(stats["BEST"][2]) + '</td>' \
-                '<td>' + str(stats["BEST"][3]) + '</td>' \
+                '<td class="data">' + str(stats["BESTCP"]) + '</td>' \
+                '<td class="data">' + str(stats["BESTHP"]) + '</td>' \
+                '<td class="data">' + str(stats["BEST"][1]) + '</td>' \
+                '<td class="data">' + str(stats["BEST"][2]) + '</td>' \
+                '<td class="data">' + str(stats["BEST"][3]) + '</td>' \
+                '<td class="data">100%</td>' \
             '</tr>' \
             '<tr>' \
                 '<td>' + str('Best IV Set') + '</td>' \
-                '<td>' + str(stats["possibleBESTCP"]) + '</td>' \
-                '<td>' + str(stats["possibleBESTHP"]) + '</td>' \
-                '<td>' + str(stats["possibleBEST"][1]) + '</td>' \
-                '<td>' + str(stats["possibleBEST"][2]) + '</td>' \
-                '<td>' + str(stats["possibleBEST"][3]) + '</td>' \
+                '<td class="data">' + str(stats["possibleBESTCP"]) + '</td>' \
+                '<td class="data">' + str(stats["possibleBESTHP"]) + '</td>' \
+                '<td class="data">' + str(stats["possibleBEST"][1]) + '</td>' \
+                '<td class="data">' + str(stats["possibleBEST"][2]) + '</td>' \
+                '<td class="data">' + str(stats["possibleBEST"][3]) + '</td>' \
+                '<td class="data">' + str("%.2f" % (((stats["possibleBEST"][1] + stats["possibleBEST"][2] + stats["possibleBEST"][3])/float(45))*100)) + '%</td>' \
             '</tr>' \
             '<tr>' \
                 '<td>' + str('Worst IV Set') + '</td>' \
-                '<td>' + str(stats["possibleWORSTCP"]) + '</td>' \
-                '<td>' + str(stats["possibleWORSTHP"]) + '</td>' \
-                '<td>' + str(stats["possibleWORST"][1]) + '</td>' \
-                '<td>' + str(stats["possibleWORST"][2]) + '</td>' \
-                '<td>' + str(stats["possibleWORST"][3]) + '</td>' \
+                '<td class="data">' + str(stats["possibleWORSTCP"]) + '</td>' \
+                '<td class="data">' + str(stats["possibleWORSTHP"]) + '</td>' \
+                '<td class="data">' + str(stats["possibleWORST"][1]) + '</td>' \
+                '<td class="data">' + str(stats["possibleWORST"][2]) + '</td>' \
+                '<td class="data">' + str(stats["possibleWORST"][3]) + '</td>' \
+                '<td class="data">' + str("%.2f" % (((stats["possibleWORST"][1] + stats["possibleWORST"][2] + stats["possibleWORST"][3])/float(45))*100)) + '%</td>' \
             '</tr>' \
             '<tr>' \
                 '<td>' + str('Worst Possible') + '</td>' \
-                '<td>' + str(stats["WORSTCP"]) + '</td>' \
-                '<td>' + str(stats["WORSTHP"]) + '</td>' \
-                '<td>' + str(stats["WORST"][1]) + '</td>' \
-                '<td>' + str(stats["WORST"][2]) + '</td>' \
-                '<td>' + str(stats["WORST"][3]) + '</td>' \
+                '<td class="data">' + str(stats["WORSTCP"]) + '</td>' \
+                '<td class="data">' + str(stats["WORSTHP"]) + '</td>' \
+                '<td class="data">' + str(stats["WORST"][1]) + '</td>' \
+                '<td class="data">' + str(stats["WORST"][2]) + '</td>' \
+                '<td class="data">' + str(stats["WORST"][3]) + '</td>' \
+                '<td class="data">0%</td>' \
             '</tr>'
 
     ivRowMarkup = Markup(ivRow)
