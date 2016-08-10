@@ -46,3 +46,6 @@
 .data {
     text-align:right;
 }
+.canvasjs-chart-toolbar> button:first-child{
+    display: none !important;
+}

@@ -100,6 +100,33 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
     possibleBESTHP = int(cpm["40.5"]["CpM"] * (baseStamina + possibleBEST[3]))
     possibleWORSTHP = int(cpm["40.5"]["CpM"] * (baseStamina + possibleWORST[3]))
 
+    bestChart = ''
+    possibleChart = ''
+    for cpmval in range(1, 41):
+
+        level = str(cpmval)
+        halflevel = str(cpmval + 0.5)
+
+        BESTCPChart = int(max(10,math.floor((baseAttack + BEST[1]) * math.pow((baseDefense + BEST[2]),0.5) * math.pow((baseStamina + BEST[3]),0.5) * math.pow((cpm[level]["CpM"]),2) / 10)))
+        WORSTCPChart = int(max(10,math.floor((baseAttack + WORST[1]) * math.pow((baseDefense + WORST[2]),0.5) * math.pow((baseStamina + WORST[3]),0.5) * math.pow((cpm[level]["CpM"]),2) / 10)))
+        BESThalfCPChart = int(max(10,math.floor((baseAttack + BEST[1]) * math.pow((baseDefense + BEST[2]),0.5) * math.pow((baseStamina + BEST[3]),0.5) * math.pow((cpm[halflevel]["CpM"]),2) / 10)))
+        WORSThalfCPChart = int(max(10,math.floor((baseAttack + WORST[1]) * math.pow((baseDefense + WORST[2]),0.5) * math.pow((baseStamina + WORST[3]),0.5) * math.pow((cpm[halflevel]["CpM"]),2) / 10)))
+        
+        possibleBESTCPChart = int(max(10,math.floor((baseAttack + possibleBEST[1]) * math.pow((baseDefense + possibleBEST[2]),0.5) * math.pow((baseStamina + possibleBEST[3]),0.5) * math.pow((cpm[level]["CpM"]),2) / 10)))
+        possibleWORSTCPChart = int(max(10,math.floor((baseAttack + possibleWORST[1]) * math.pow((baseDefense + possibleWORST[2]),0.5) * math.pow((baseStamina + possibleWORST[3]),0.5) * math.pow((cpm[level]["CpM"]),2) / 10)))
+        possibleBESThalfCPChart = int(max(10,math.floor((baseAttack + possibleBEST[1]) * math.pow((baseDefense + possibleBEST[2]),0.5) * math.pow((baseStamina + possibleBEST[3]),0.5) * math.pow((cpm[halflevel]["CpM"]),2) / 10)))
+        possibleWORSThalfCPChart = int(max(10,math.floor((baseAttack + possibleWORST[1]) * math.pow((baseDefense + possibleWORST[2]),0.5) * math.pow((baseStamina + possibleWORST[3]),0.5) * math.pow((cpm[halflevel]["CpM"]),2) / 10)))
+
+        BESTlevelstr = "{x:" + str(level) + ", y:[" + str(WORSTCPChart) + ", " + str(BESTCPChart) + "]},"
+        BESThalflevelstr = "{x:" + str(halflevel) + ", y:[" + str(WORSTCPChart) + ", " + str(BESTCPChart) + "]},"
+        possiblelevelstr = "{x:" + str(level) + ", y:[" + str(possibleWORSTCPChart) + ", " + str(possibleBESTCPChart) + "]},"
+        possiblehalflevelstr = "{x:" + str(halflevel) + ", y:[" + str(possibleWORSTCPChart) + ", " + str(possibleBESTCPChart) + "]},"
+
+        bestChart += BESTlevelstr
+        bestChart += BESThalflevelstr
+        possibleChart += possiblelevelstr
+        possibleChart += possiblehalflevelstr
+
     stats = {
         "levels": levels,
         "possible": possibleHP,
@@ -116,7 +143,9 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
         "BESTHP": BESTHP,
         "WORSTHP": WORSTHP,
         "possibleBESTHP": possibleBESTHP,
-        "possibleWORSTHP": possibleWORSTHP
+        "possibleWORSTHP": possibleWORSTHP,
+        "bestChart": bestChart,
+        "possibleChart": possibleChart
     }    
 
     return stats

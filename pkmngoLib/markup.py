@@ -5,6 +5,64 @@ import urllib
 import json
 from flask import Markup
 
+def ivChart(name, bestChart, possibleChart):
+
+    chart = "<script type='text/javascript'>" \
+            "window.onload = function(){" \
+                "var chart = new CanvasJS.Chart('chartContainer',{" \
+                    "title:{" \
+                        "text: '" + name + "'," \
+                    "}," \
+                    "theme: 'theme3'," \
+                    "exportEnabled: false," \
+                    "animationEnabled: true," \
+                    "axisY: {" \
+                        "includeZero: false," \
+                        "title: 'CP'," \
+                    "}," \
+                    "zoomEnabled: true," \
+                    "axisX: {" \
+                        "interval:1," \
+                        "title: 'Level (Drag to scroll)'," \
+                        "viewportMinimum: 30," \
+                        "viewportMaximum: 40," \
+                    "}," \
+                    "toolTip: {" \
+                        "shared: true," \
+                    "}," \
+                    "data: [" \
+                    "{" \
+                        "type: 'rangeSplineArea'," \
+                        "showInLegend: true," \
+                        "name: 'Possible Range'," \
+                        "yValueFormatString: '#0.## CP'," \
+                        "xValueFormatString: 'Level #0'," \
+                        "dataPoints: [" + bestChart + "]" \
+                    "}," \
+                    "{" \
+                        "type: 'rangeSplineArea'," \
+                        "showInLegend: true," \
+                        "name: 'Your Range'," \
+                        "yValueFormatString: '#0.## CP'," \
+                        "dataPoints: [" + possibleChart + "]" \
+                    "}" \
+                    "]" \
+                "});" \
+                "chart.render();" \
+                "var parentElement = document.getElementsByClassName('canvasjs-chart-toolbar');" \
+                "var childElement = document.getElementsByTagName('button');" \
+                "if(childElement[0].getAttribute('state') === 'pan'){" \
+                    "childElement[0].click();" \
+                "}" \
+            "}" \
+            "</script>"
+
+    chartMarkup = Markup(chart)
+
+    return chartMarkup 
+
+
+
 def pkmnSelect():
 
     # load pokemon.json as data

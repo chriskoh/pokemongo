@@ -62,6 +62,8 @@ def cp():
         evolveID1ivSets = ''
         evolveID2ivSets = ''
 
+    chart = ivChart(data[pkmnID]["name"], stats["bestChart"], stats["possibleChart"])
+
     # create dictionary to be passed in to cp.html
     pokemon = {
         "id": pkmnID,
@@ -82,7 +84,7 @@ def cp():
 
     pkmnSelectMarkup = pkmnSelect()
  
-    return render_template('cp.html', ev1=evolveID1ivSets, ev2=evolveID2ivSets, ivSets=ivSets, pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
+    return render_template('cp.html', chart=chart, ev1=evolveID1ivSets, ev2=evolveID2ivSets, ivSets=ivSets, pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')
