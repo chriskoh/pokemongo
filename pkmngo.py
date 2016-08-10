@@ -40,6 +40,7 @@ def cp():
     # calclate stats based on pokemons level
     stats = calcStats(baseAttack, baseDefense, baseStamina, actualCP, hp, dust)
     ivSets = printIVs(stats)
+    chart = ivChart(data[pkmnID]["name"], stats["bestChart"], stats["possibleChart"], "0")
 
     #evolves (if possible)
     if data[pkmnID]["candyToEvolve"] != 0:
@@ -48,6 +49,7 @@ def cp():
         evolveID1Name = data[evolveID1]["name"]
         evolveID1Stats = calcEvolveStats(data[evolveID1]["baseAttack"], data[evolveID1]["baseDefense"], data[evolveID1]["baseStamina"], evolveID1Name, stats["possibleBEST"], stats["possibleWORST"])
         evolveID1ivSets = printEvolveIVs(evolveID1Stats, evolveID1Name)
+        evolveID1chart = ivChart(data[evolveID1]["name"], evolveID1Stats["bestChart"], evolveID1Stats["possibleChart"], "1")
         
         if data[evolveID1]["candyToEvolve"] != 0:
             evolveID2 = int(evolveID1) + 1
@@ -55,14 +57,17 @@ def cp():
             evolveID2Name = data[evolveID2]["name"]
             evolveID2Stats = calcEvolveStats(data[evolveID2]["baseAttack"], data[evolveID2]["baseDefense"], data[evolveID2]["baseStamina"], evolveID2Name, stats["possibleBEST"], stats["possibleWORST"])
             evolveID2ivSets = printEvolveIVs(evolveID2Stats, evolveID2Name)
+            evolveID2chart = ivChart(data[evolveID2]["name"], evolveID2Stats["bestChart"], evolveID2Stats["possibleChart"], "2")
         else:
             evolveID2ivSets = ''
+            evolveID2chart = ''
 
     else:
         evolveID1ivSets = ''
         evolveID2ivSets = ''
+        evolveID1chart = ''
+        evolveID2chart = ''
 
-    chart = ivChart(data[pkmnID]["name"], stats["bestChart"], stats["possibleChart"])
 
     # create dictionary to be passed in to cp.html
     pokemon = {
@@ -84,7 +89,7 @@ def cp():
 
     pkmnSelectMarkup = pkmnSelect()
  
-    return render_template('cp.html', chart=chart, ev1=evolveID1ivSets, ev2=evolveID2ivSets, ivSets=ivSets, pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
+    return render_template('cp.html', chart=chart, chart2=evolveID1chart, chart3=evolveID2chart, ev1=evolveID1ivSets, ev2=evolveID2ivSets, ivSets=ivSets, pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')

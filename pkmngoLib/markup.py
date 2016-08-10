@@ -5,11 +5,13 @@ import urllib
 import json
 from flask import Markup
 
-def ivChart(name, bestChart, possibleChart):
+def ivChart(name, bestChart, possibleChart, idnum):
+
+    chartname = "chart" + idnum
 
     chart = "<script type='text/javascript'>" \
             "window.onload = function(){" \
-                "var chart = new CanvasJS.Chart('chartContainer',{" \
+                    "var chart = new CanvasJS.Chart('chartContainer',{" \
                     "title:{" \
                         "text: '" + name + "'," \
                     "}," \
@@ -32,7 +34,7 @@ def ivChart(name, bestChart, possibleChart):
                     "}," \
                     "data: [" \
                     "{" \
-                        "type: 'rangeSplineArea'," \
+                        "type: 'rangeArea'," \
                         "showInLegend: true," \
                         "name: 'Possible Range'," \
                         "yValueFormatString: '#0.## CP'," \
@@ -40,7 +42,7 @@ def ivChart(name, bestChart, possibleChart):
                         "dataPoints: [" + bestChart + "]" \
                     "}," \
                     "{" \
-                        "type: 'rangeSplineArea'," \
+                        "type: 'rangeArea'," \
                         "showInLegend: true," \
                         "name: 'Your Range'," \
                         "yValueFormatString: '#0.## CP'," \
