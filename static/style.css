@@ -37,10 +37,12 @@
     width: 100%;
 }
 #hpbox {
+    font-size: 25px;
     height: 50%;
     width: 100%;
 }
 #dustbox {
+    font-size: 25px;
     height: 50%;
     width: 100%;
 }
@@ -56,32 +58,36 @@
     left:0;
     height: 100%;
     width: 100%;
-    border: 1px solid black;
     overflow: hidden;
     padding: 25px;
 }
 #databox {
     height: 90%;
     width: 95%;
-    border: 1px solid brown;
+    position: relative;
 }
 #info {
     height: 100%;
     width: 33%;
     float: left;
-    border: 1px solid red;
 }
 #base {
+    display: flex;
+    justify-content: center;
     height: 33%;
     width: 33%;
     float: left;
-    border: 1px solid blue;
+}
+#basecenter {
+    align-self:center;
+}
+#base table{
+    margin: 0 auto;
 }
 #basechart {
     height: 33%;
     width: 33%;
     float: left;
-    border: 1px solid green;
 }
 #name {
     height: 10%;

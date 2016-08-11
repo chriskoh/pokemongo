@@ -116,6 +116,7 @@ def calcStats(baseAttack, baseDefense, baseStamina, cp, hp, dust):
     for ivSet in possibleSET:
         pctPerfect += float(ivSet[4])
     pctPerfect /= len(possibleSET)
+    pctPerfect = "{:.2f}".format(pctPerfect)
 
     BESTCP = 1
     WORSTCP = 1

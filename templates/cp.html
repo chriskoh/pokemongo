@@ -87,60 +87,38 @@
                             <input type="submit" >
                         </div>
                 </form>
-<!--                    <div id="pokemon">
-                            <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
-
-                            <img height="750" width="500" border="0" src="http://chriskoh.io/images/background_fire.png" />
-
-                            <div id="pkmnselectdiv">
-                                <select id="pkmnselectbox" name="pokemonSelect" autofocus>
-                                    {{pkmnSelect}}
-                                </select>
-                            </div>
-
-                            <div id="cpdiv">
-                                <input id="cpbox" type="number" name="aCP" placeholder="CP">
-                            </div>
-
-                            <div id="hpdiv">
-                                <input id="hpbox" type="number" name="HP" placeholder="HP">
-                            </div>
-
-                            <div id="dustdiv">
-                                <input id="dustbox" type="number" name="DUST" placeholder="Dust">
-                            </div>
-
-                            <br /><input type="submit" >
-                            </form>
-                        </div> -->
-
                 </div>
                 <div id="base">
-
-                    <table>
-                        <tr>
-                            <th>{{pokemon["name"]}}</th>
-                            <th>CP</th>
-                            <th>HP {{evname}}</th>
-                            <th>Attack</th>
-                            <th>Defense</th>
-                            <th>Stamina</th>
-                            <th>Perfection</th>
-                        </tr>
-                        {{ivSets["cpSets"]}}
-                    </table>
+                    <div id="basecenter">
+                        <table>
+                            <tr>
+                                <th>{{pokemon["name"]}}</th>
+                                <th>CP</th>
+                                <th>HP {{evname}}</th>
+                                <th>Attack</th>
+                                <th>Defense</th>
+                                <th>Stamina</th>
+                                <th>Perfection</th>
+                            </tr>
+                            {{ivSets["cpSets"]}}
+                        </table>
+                    </div>
                 </div>
                 <div id="basechart">
                     <div id="chart0" style="height: 100%; width: 100%;"></div>
                 </div>
                 <div id="base">
-                    {{ev1}}
+                    <div id="basecenter">
+                        {{ev1}}
+                    </div>
                 </div>
                 <div id="basechart">
                     <div id="chart1" style="height: 100%; width: 100%;"></div>
                 </div>
                 <div id="base">
-                    {{ev2}}
+                    <div id="basecenter">
+                        {{ev2}}
+                    </div>
                 </div>
                 <div id="basechart">
                     <div id="chart2" style="height: 100%; width: 100%;"></div>
