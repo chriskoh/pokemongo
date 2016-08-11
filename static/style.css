@@ -85,53 +85,46 @@
 }
 #name {
     height: 10%;
-    width: 35%;
+    width: 40%;
     float: left;
-    border: 1px solid yellow;
     text-align:center;
 }
 #cphp {
     height: 10%;
     width: 20%;
     float: left;
-    border: 1px solid yellow;
     text-align: center;
 }
 #pkmnimg {
     height: 40%;
     width: 100%;
     float: left;
-    border: 1px solid yellow;
     text-align:center;
 }
 #stats {
     height: 15%;
-    width: 32%;
+    width: 33%;
     float: left;
-    border: 1px solid yellow;
     position: relative;
     text-align: center;
 }
 #catch {
     height: 15%;
-    width: 48%;
+    width: 50%;
     float:left;
-    border: 1px solid yellow;
     position: relative;
     text-align:center;
 }
 #calculate {
-    height: 8%;
+    height: 10%;
     width: 100%;
     float: left;
-    border: 1px solid yellow;
     text-align: center;
 }
 #ivpct {
     height: 10%;
     width: 100%;
     float: left;
-    border: 1px solid yellow;
     text-align: center;
 }
 #statuslabel {
@@ -139,7 +132,6 @@
     width: 100%;
     bottom: 0;
     position: absolute;
-    border: 1px solid yellow;
 }
 #statusvalue {
     height: 75%;
