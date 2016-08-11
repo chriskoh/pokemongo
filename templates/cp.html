@@ -6,6 +6,12 @@
             {{chart}}
             {{chart2}}
             {{chart3}}
+            var parentElement = document.getElementsByClassName('canvasjs-chart-toolbar');
+            var childElement = document.getElementsByTagName('button');
+            if(childElement[0].getAttribute('state') === 'pan'){
+                childElement[0].click();
+            }
+
         } 
         </script>
         <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js">
@@ -17,7 +23,7 @@
 <!--                <h2>Initial Values - {{stats["pctPerfect"]}}% Perfect</h2> -->
             <div id="databox">
                 <div id="info">
-<!--                    <div id="pokemon">
+                    <div id="pokemon">
                             <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
 
                             <img height="750" width="500" border="0" src="http://chriskoh.io/images/background_fire.png" />
@@ -42,11 +48,11 @@
 
                             <br /><input type="submit" >
                             </form>
-                        </div> -->
+                        </div>
 
                 </div>
                 <div id="base">
-<!--
+
                     <table>
                         <tr>
                             <th>{{pokemon["name"]}}</th>
@@ -58,22 +64,22 @@
                             <th>Perfection</th>
                         </tr>
                         {{ivSets["cpSets"]}}
-                    </table> -->
+                    </table>
                 </div>
                 <div id="basechart">
-<!--                    <div id="chart0" style="height: 250px; width: 90%; padding:10px;"></div> -->
+                    <div id="chart0" style="height: 100%; width: 100%;"></div>
                 </div>
                 <div id="base">
-<!--                    {{ev1}} -->
+                    {{ev1}}
                 </div>
                 <div id="basechart">
-<!--                    <div id="chart1" style="height: 250px; width: 90%; padding:10px;"></div> -->
+                    <div id="chart1" style="height: 100%; width: 100%;"></div>
                 </div>
                 <div id="base">
-<!--                    {{ev2}} -->
+                    {{ev2}}
                 </div>
                 <div id="basechart">
-<!--                    <div id="chart2" style="height: 250px; width: 90%; padding: 10px;"></div> -->
+                    <div id="chart2" style="height: 100%; width: 100%;"></div>
                 </div>
             </div>
         </div>

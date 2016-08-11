@@ -57,11 +57,11 @@
     width: 100%;
     border: 1px solid black;
     overflow: hidden;
-    padding: 15px;
+    padding: 25px;
 }
 #databox {
     height: 90%;
-    width: 90%;
+    width: 95%;
     border: 1px solid brown;
 }
 #info {
