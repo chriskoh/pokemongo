@@ -20,10 +20,59 @@
     </head>
     <body>
         <div id="container">
-<!--                <h2>Initial Values - {{stats["pctPerfect"]}}% Perfect</h2> -->
             <div id="databox">
-                <div id="info">
-                    <div id="pokemon">
+                <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
+                    <div id="info">
+                        <div id="name">
+                            <select id="pkmnselectbox" name="pokemonSelect" autofocus>
+                                {{pkmnSelect}}
+                            </select>
+                        </div>
+                        <div id="cphp">
+                            <input id="cpbox" type="number" name="aCP" placeholder="CP">
+                        </div>
+                        <div id="cphp">
+                            <input id="hpbox" type="number" name="HP" placeholder="HP">
+                        </div>
+                        <div id="cphp">
+                            <input id="dustbox" type="number" name="DUST" placeholder="Dust">
+                        </div>
+                        <div id="pkmnimg">
+                            **Individual Pokemon .gif**
+                        </div>
+                        <div id="ivpct">
+                            <h1>Initial Values - {{stats["pctPerfect"]}}% Perfect</h1>
+                        </div>
+                        <div id="stats">
+                            <div id="statuslabel">
+                                Attack
+                            </div>
+                        </div>
+                        <div id="stats">
+                            <div id="statuslabel">
+                                Defense
+                            </div>
+                        </div>
+                        <div id="stats">
+                            <div id="statuslabel">
+                                Stamina
+                            </div>
+                        </div>
+                        <div id="catch">
+                            <div id="statuslabel">
+                                Catch Rate
+                            </div>
+                        </div>
+                        <div id="catch">
+                            <div id="statuslabel">
+                                Flee Rate
+                            </div>
+                        </div>
+                        <div id="calculate">
+                            <input type="submit" >
+                        </div>
+                </form>
+<!--                    <div id="pokemon">
                             <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
 
                             <img height="750" width="500" border="0" src="http://chriskoh.io/images/background_fire.png" />
@@ -48,7 +97,7 @@
 
                             <br /><input type="submit" >
                             </form>
-                        </div>
+                        </div> -->
 
                 </div>
                 <div id="base">
