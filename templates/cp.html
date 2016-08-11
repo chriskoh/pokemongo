@@ -13,15 +13,40 @@
         <title>Pokemon Go</title>
     </head>
     <body>
-        <div id="chart0" style="height: 250px; width: 400px; padding:10px;"></div>
         <div id="container">
+<!--                <h2>Initial Values - {{stats["pctPerfect"]}}% Perfect</h2> -->
             <div id="databox">
                 <div id="info">
+<!--                    <div id="pokemon">
+                            <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
+
+                            <img height="750" width="500" border="0" src="http://chriskoh.io/images/background_fire.png" />
+
+                            <div id="pkmnselectdiv">
+                                <select id="pkmnselectbox" name="pokemonSelect" autofocus>
+                                    {{pkmnSelect}}
+                                </select>
+                            </div>
+
+                            <div id="cpdiv">
+                                <input id="cpbox" type="number" name="aCP" placeholder="CP">
+                            </div>
+
+                            <div id="hpdiv">
+                                <input id="hpbox" type="number" name="HP" placeholder="HP">
+                            </div>
+
+                            <div id="dustdiv">
+                                <input id="dustbox" type="number" name="DUST" placeholder="Dust">
+                            </div>
+
+                            <br /><input type="submit" >
+                            </form>
+                        </div> -->
 
                 </div>
                 <div id="base">
-                    <h2>Initial Values - {{stats["pctPerfect"]}}% Perfect</h2>
-
+<!--
                     <table>
                         <tr>
                             <th>{{pokemon["name"]}}</th>
@@ -33,49 +58,24 @@
                             <th>Perfection</th>
                         </tr>
                         {{ivSets["cpSets"]}}
-                    </table>
+                    </table> -->
                 </div>
                 <div id="basechart">
+<!--                    <div id="chart0" style="height: 250px; width: 90%; padding:10px;"></div> -->
                 </div>
                 <div id="base">
-                    {{ev1}}
+<!--                    {{ev1}} -->
                 </div>
                 <div id="basechart">
-                    <div id="chart1" style="height: 250px; width: 100%; padding:10px;"></div>
+<!--                    <div id="chart1" style="height: 250px; width: 90%; padding:10px;"></div> -->
                 </div>
                 <div id="base">
-                    {{ev2}}
+<!--                    {{ev2}} -->
                 </div>
                 <div id="basechart">
-                    <div id="chart2" style="height: 250px; width: 100%; padding: 10px;"></div>
+<!--                    <div id="chart2" style="height: 250px; width: 90%; padding: 10px;"></div> -->
                 </div>
             </div>
-        </div>
-        <div id="pokemon">
-            <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
-
-                <img height="750" width="500" border="0" src="http://chriskoh.io/images/background_fire.png" />
-
-                <div id="pkmnselectdiv">
-                    <select id="pkmnselectbox" name="pokemonSelect" autofocus>
-                        {{pkmnSelect}}
-                    </select>
-                </div>
-
-                <div id="cpdiv">
-                    <input id="cpbox" type="number" name="aCP" placeholder="CP">
-                </div>
-
-                <div id="hpdiv">
-                    <input id="hpbox" type="number" name="HP" placeholder="HP">
-                </div>
-
-                <div id="dustdiv">
-                    <input id="dustbox" type="number" name="DUST" placeholder="Dust">
-                </div>
-
-                <br /><input type="submit" >
-            </form>
         </div>
     </body>
 </html>

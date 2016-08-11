@@ -50,34 +50,35 @@
     display: none !important;
 }
 #container {
+    position:fixed;
+    top:0;
+    left:0;
     height: 100%;
     width: 100%;
     border: 1px solid black;
     overflow: hidden;
-    padding: 75px;
+    padding: 15px;
+}
+#databox {
+    height: 90%;
+    width: 90%;
+    border: 1px solid brown;
 }
 #info {
-    height: 750px;
-    width: 300px;
+    height: 100%;
+    width: 33%;
     float: left;
     border: 1px solid red;
 }
 #base {
-    height: 250px;
-    width: 400px;
+    height: 33%;
+    width: 33%;
     float: left;
     border: 1px solid blue;
 }
 #basechart {
-    height: 250px;
-    width: 1000px;
+    height: 33%;
+    width: 33%;
     float: left;
     border: 1px solid green;
-}
-#databox {
-    height: 800px;
-    width: 1800px;
-    z-index: 1;
-    border: 1px solid brown;
-    padding: 5px;
 }

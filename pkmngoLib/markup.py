@@ -15,7 +15,8 @@ def ivChart(name, bestChart, possibleChart, idnum):
                     "title:{" \
                         "text: '" + name + "'," \
                     "}," \
-                    "theme: 'theme3'," \
+                    "theme: 'theme2'," \
+                    "interval: 100," \
                     "exportEnabled: false," \
                     "animationEnabled: true," \
                     "axisY: {" \
