@@ -9,9 +9,9 @@ def ivChart(name, bestChart, possibleChart, idnum):
 
     chartname = "chart" + idnum
 
-    chart = "<script type='text/javascript'>" \
-            "window.onload = function(){" \
-                    "var chart = new CanvasJS.Chart('chartContainer',{" \
+#    chart = "<script type='text/javascript'>" \
+#            "window.onload = function(){" \
+    chart =         "var " + chartname + " = new CanvasJS.Chart('" + chartname + "',{" \
                     "title:{" \
                         "text: '" + name + "'," \
                     "}," \
@@ -50,14 +50,14 @@ def ivChart(name, bestChart, possibleChart, idnum):
                     "}" \
                     "]" \
                 "});" \
-                "chart.render();" \
+                "" + chartname + ".render();" \
                 "var parentElement = document.getElementsByClassName('canvasjs-chart-toolbar');" \
                 "var childElement = document.getElementsByTagName('button');" \
                 "if(childElement[0].getAttribute('state') === 'pan'){" \
                     "childElement[0].click();" \
-                "}" \
-            "}" \
-            "</script>"
+                "}"
+#            "}" \
+#            "</script>"
 
     chartMarkup = Markup(chart)
 

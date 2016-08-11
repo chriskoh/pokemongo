@@ -1,15 +1,56 @@
 <html>
     <head>
         <link rel=stylesheet type=text/css href="http://chriskoh.io/static/style.css">
+        <script type="text/javascript">
+        window.onload = function() {
             {{chart}}
             {{chart2}}
             {{chart3}}
+        } 
         </script>
         <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js">
         </script>
         <title>Pokemon Go</title>
     </head>
     <body>
+        <div id="chart0" style="height: 250px; width: 400px; padding:10px;"></div>
+        <div id="container">
+            <div id="databox">
+                <div id="info">
+
+                </div>
+                <div id="base">
+                    <h2>Initial Values - {{stats["pctPerfect"]}}% Perfect</h2>
+
+                    <table>
+                        <tr>
+                            <th>{{pokemon["name"]}}</th>
+                            <th>CP</th>
+                            <th>HP {{evname}}</th>
+                            <th>Attack</th>
+                            <th>Defense</th>
+                            <th>Stamina</th>
+                            <th>Perfection</th>
+                        </tr>
+                        {{ivSets["cpSets"]}}
+                    </table>
+                </div>
+                <div id="basechart">
+                </div>
+                <div id="base">
+                    {{ev1}}
+                </div>
+                <div id="basechart">
+                    <div id="chart1" style="height: 250px; width: 100%; padding:10px;"></div>
+                </div>
+                <div id="base">
+                    {{ev2}}
+                </div>
+                <div id="basechart">
+                    <div id="chart2" style="height: 250px; width: 100%; padding: 10px;"></div>
+                </div>
+            </div>
+        </div>
         <div id="pokemon">
             <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
 
@@ -36,50 +77,5 @@
                 <br /><input type="submit" >
             </form>
         </div>
-        <div id="data">
-<!--
-            <p>{{pokemon["name"]}} ({{pokemon["id"]}})</p>
-            <p>Type: {{pokemon["type1"]}}/{{pokemon["type2"]}}</p>
-            <p>Candy to Evolve: {{pokemon["candyToEvolve"]}}</p>
-            <p>Capture Rate: {{pokemon["rateCapture"]}}%</p>
-            <p>Flee Rate: {{pokemon["rateFlee"]}}%</p>
-            <hr>
-            <h2>Base Stats</h2>
-            <p>Base Stamina: {{pokemon["baseStamina"]}}</p>
-            <p>Base Attack: {{pokemon["baseAttack"]}}</p>
-            <p>Base Defense: {{pokemon["baseDefense"]}}</p>
-            <hr>
--->
-            <h2>Initial Values - {{stats["pctPerfect"]}}% Perfect</h2>
-
-            <table>
-                <tr>
-                    <th>{{pokemon["name"]}}</th>
-                    <th>CP</th>
-                    <th>HP {{evname}}</th>
-                    <th>Attack</th>
-                    <th>Defense</th>
-                    <th>Stamina</th>
-                    <th>Perfection</th>
-                </tr>
-                {{ivSets["cpSets"]}}
-            </table><br />
-            {{ev1}}
-            {{ev2}}
-<!--
-            <table>
-
-                <tr>
-                    <th>Level</th>
-                    <th>Attack IV</th>
-                    <th>Defense IV</th>
-                    <th>Stamina IV</th>
-                    <th>Perfect</th>
-                <tr>
-                {{ivSets["ivSets"]}}
-            </table>
--->
-        </div>
-        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     </body>
 </html>

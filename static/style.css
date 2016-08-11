@@ -49,3 +49,35 @@
 .canvasjs-chart-toolbar> button:first-child{
     display: none !important;
 }
+#container {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    overflow: hidden;
+    padding: 75px;
+}
+#info {
+    height: 750px;
+    width: 300px;
+    float: left;
+    border: 1px solid red;
+}
+#base {
+    height: 250px;
+    width: 400px;
+    float: left;
+    border: 1px solid blue;
+}
+#basechart {
+    height: 250px;
+    width: 1000px;
+    float: left;
+    border: 1px solid green;
+}
+#databox {
+    height: 800px;
+    width: 1800px;
+    z-index: 1;
+    border: 1px solid brown;
+    padding: 5px;
+}
