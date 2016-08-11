@@ -68,6 +68,8 @@ def cp():
         evolveID1chart = ''
         evolveID2chart = ''
 
+    catchrate = "{:.2f}".format((data[pkmnID]["rateCapture"]) * 100)
+    fleerate = "{:.2f}".format((data[pkmnID]["rateFlee"]) * 100)
 
     # create dictionary to be passed in to cp.html
     pokemon = {
@@ -78,8 +80,8 @@ def cp():
         "baseDefense": baseDefense,
         "type1": data[pkmnID]["type1"],
         "type2": data[pkmnID]["type2"],
-        "rateCapture": data[pkmnID]["rateCapture"],
-        "rateFlee": data[pkmnID]["rateFlee"],
+        "rateCapture": catchrate,
+        "rateFlee": fleerate,
         "candyToEvolve": data[pkmnID]["candyToEvolve"],
         "movement": data[pkmnID]["movement"],
         "quickMoves": data[pkmnID]["quickMoves"],

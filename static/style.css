@@ -141,3 +141,9 @@
     position: absolute;
     border: 1px solid yellow;
 }
+#statusvalue {
+    height: 75%;
+    width: 100%;
+    top: 0;
+    position:absolute;
+}
