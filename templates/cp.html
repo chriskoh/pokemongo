@@ -8,10 +8,12 @@
             {{chart3}}
             var parentElement = document.getElementsByClassName('canvasjs-chart-toolbar');
             var childElement = document.getElementsByTagName('button');
-            if(childElement[0].getAttribute('state') === 'pan'){
-                childElement[0].click();
-            }
+            for(var i=0; i < childElement.length; i++){
 
+                if(childElement[i].getAttribute('state') === 'pan'){
+                    childElement[i].click();
+                }
+            }
         } 
         </script>
         <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js">
@@ -22,7 +24,7 @@
         <div id="container">
             <div id="databox">
                 <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
-                    <div id="info">
+                    <div id="info" style="background-image: url('http://chriskoh.io/images/{{pokemon["type1"]}}.png');">
                         <div id="name">
                             <select id="pkmnselectbox" name="pokemonSelect" autofocus>
                                 {{pkmnSelect}}
@@ -38,7 +40,7 @@
                             <input id="dustbox" type="number" name="DUST" placeholder="Dust">
                         </div>
                         <div id="pkmnimg">
-                            **Individual Pokemon .gif**
+                            <img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/{{pokemon["lname"]}}.gif" />
                         </div>
                         <div id="ivpct">
                             <h1>Initial Values - {{stats["pctPerfect"]}}% Perfect</h1>
@@ -52,7 +54,7 @@
                             </div>
                         </div>
                         <div id="stats">
-                            <div id="statusValue">
+                            <div id="statsValue">
                                 <h1>{{pokemon["baseDefense"]}}</h1>
                             </div>
                             <div id="statuslabel">
@@ -60,7 +62,7 @@
                             </div>
                         </div>
                         <div id="stats">
-                            <div id="statusValue">
+                            <div id="statsValue">
                                 <h1>{{pokemon["baseStamina"]}}</h1>
                             </div>
                             <div id="statuslabel">

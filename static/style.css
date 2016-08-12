@@ -109,10 +109,11 @@
 }
 #stats {
     height: 15%;
-    width: 33%;
+    width: 33.334%;
     float: left;
     position: relative;
     text-align: center;
+    background-color: #F5F5DC;
 }
 #catch {
     height: 15%;
@@ -120,18 +121,21 @@
     float:left;
     position: relative;
     text-align:center;
+    background-color: #F5F5DC;
 }
 #calculate {
     height: 10%;
     width: 100%;
     float: left;
     text-align: center;
+    background-color: #F5F5DC;
 }
 #ivpct {
     height: 10%;
     width: 100%;
     float: left;
     text-align: center;
+    background-color: #F5F5DC;
 }
 #statuslabel {
     height: 25%;

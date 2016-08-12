@@ -75,6 +75,7 @@ def cp():
     pokemon = {
         "id": pkmnID,
         "name": data[pkmnID]["name"],
+        "lname": data[pkmnID]["name"].lower(),
         "baseStamina": baseStamina,
         "baseAttack": baseAttack,
         "baseDefense": baseDefense,
