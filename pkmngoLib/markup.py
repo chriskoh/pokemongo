@@ -50,17 +50,30 @@ def ivChart(name, bestChart, possibleChart, idnum):
                     "]" \
                 "});" \
                 "" + chartname + ".render();" \
-#                "var parentElement = document.getElementsByClassName('canvasjs-chart-toolbar');" \
-#                "var childElement = document.getElementsByTagName('button');" \
-#                "if(childElement[0].getAttribute('state') === 'pan'){" \
-#                    "childElement[0].click();" \
-#                "}"
 
     chartMarkup = Markup(chart)
 
     return chartMarkup 
 
+def pkmndatalist():
+    
+    # load pokemon.json as data
+    response = urllib.urlopen('http://chriskoh.io/static/pokemon.json')
+    data = json.load(response)
 
+    # get list of keys sorted in numerical order
+    keylist = data.keys()
+    keylist.sort()
+
+    # create select options based on every pokemon found in pokemon.json
+    pkmnSelect = ''
+    for key in keylist:
+        pkmnSelect += "<option value='" + str(data[key]["name"]) + "'>"
+
+    # convert string in to mark up text
+    pkmnSelectMarkup = Markup(pkmnSelect)
+
+    return pkmnSelectMarkup
 
 def pkmnSelect():
 

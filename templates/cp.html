@@ -26,9 +26,11 @@
                 <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
                     <div id="info" style="background-image: url('http://chriskoh.io/images/{{pokemon["type1"]}}.png');">
                         <div id="name">
-                            <select id="pkmnselectbox" name="pokemonSelect" autofocus>
-                                {{pkmnSelect}}
-                            </select>
+                            <input list="test" name="pokemonSelect" placeholder="Name">
+
+                                <datalist id="test">
+                                    {{pkmndatalist}}
+                                </datalist>
                         </div>
                         <div id="cphp">
                             <input id="cpbox" type="number" name="aCP" placeholder="CP">

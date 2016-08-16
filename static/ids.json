@@ -1,0 +1,455 @@
+{
+   "bulbasaur": {
+      "id": 1
+   },
+   "ivysaur": {
+      "id": 2
+   },
+   "venusaur": {
+      "id": 3
+   },
+   "charmander": {
+      "id": 4
+   },
+   "charmeleon": {
+      "id": 5
+   },
+   "charizard": {
+      "id": 6
+   },
+   "squirtle": {
+      "id": 7
+   },
+   "wartortle": {
+      "id": 8
+   },
+   "blastoise": {
+      "id": 9
+   },
+   "caterpie": {
+      "id": 10
+   },
+   "metapod": {
+      "id": 11
+   },
+   "butterfree": {
+      "id": 12
+   },
+   "weedle": {
+      "id": 13
+   },
+   "kakuna": {
+      "id": 14
+   },
+   "beedrill": {
+      "id": 15
+   },
+   "pidgey": {
+      "id": 16
+   },
+   "pidgeotto": {
+      "id": 17
+   },
+   "pidgeot": {
+      "id": 18
+   },
+   "rattata": {
+      "id": 19
+   },
+   "raticate": {
+      "id": 20
+   },
+   "spearow": {
+      "id": 21
+   },
+   "fearow": {
+      "id": 22
+   },
+   "ekans": {
+      "id": 23
+   },
+   "arbok": {
+      "id": 24
+   },
+   "pikachu": {
+      "id": 25
+   },
+   "raichu": {
+      "id": 26
+   },
+   "sandshrew": {
+      "id": 27
+   },
+   "sandslash": {
+      "id": 28
+   },
+   "nidoran-f": {
+      "id": 29
+   },
+   "nidorina": {
+      "id": 30
+   },
+   "nidoqueen": {
+      "id": 31
+   },
+   "nidoran-m": {
+      "id": 32
+   },
+   "nidorino": {
+      "id": 33
+   },
+   "nidoking": {
+      "id": 34
+   },
+   "clefairy": {
+      "id": 35
+   },
+   "clefable": {
+      "id": 36
+   },
+   "vulpix": {
+      "id": 37
+   },
+   "ninetales": {
+      "id": 38
+   },
+   "jigglypuff": {
+      "id": 39
+   },
+   "wigglytuff": {
+      "id": 40
+   },
+   "zubat": {
+      "id": 41
+   },
+   "golbat": {
+      "id": 42
+   },
+   "oddish": {
+      "id": 43
+   },
+   "gloom": {
+      "id": 44
+   },
+   "vileplume": {
+      "id": 45
+   },
+   "paras": {
+      "id": 46
+   },
+   "parasect": {
+      "id": 47
+   },
+   "venonat": {
+      "id": 48
+   },
+   "venomoth": {
+      "id": 49
+   },
+   "diglett": {
+      "id": 50
+   },
+   "dugtrio": {
+      "id": 51
+   },
+   "meowth": {
+      "id": 52
+   },
+   "persian": {
+      "id": 53
+   },
+   "psyduck": {
+      "id": 54
+   },
+   "golduck": {
+      "id": 55
+   },
+   "mankey": {
+      "id": 56
+   },
+   "primeape": {
+      "id": 57
+   },
+   "growlithe": {
+      "id": 58
+   },
+   "arcanine": {
+      "id": 59
+   },
+   "poliwag": {
+      "id": 60
+   },
+   "poliwhirl": {
+      "id": 61
+   },
+   "poliwrath": {
+      "id": 62
+   },
+   "abra": {
+      "id": 63
+   },
+   "kadabra": {
+      "id": 64
+   },
+   "alakazam": {
+      "id": 65
+   },
+   "machop": {
+      "id": 66
+   },
+   "machoke": {
+      "id": 67
+   },
+   "machamp": {
+      "id": 68
+   },
+   "bellsprout": {
+      "id": 69
+   },
+   "weepinbell": {
+      "id": 70
+   },
+   "victreebel": {
+      "id": 71
+   },
+   "tentacool": {
+      "id": 72
+   },
+   "tentacruel": {
+      "id": 73
+   },
+   "geodude": {
+      "id": 74
+   },
+   "graveler": {
+      "id": 75
+   },
+   "golem": {
+      "id": 76
+   },
+   "ponyta": {
+      "id": 77
+   },
+   "rapidash": {
+      "id": 78
+   },
+   "slowpoke": {
+      "id": 79
+   },
+   "slowbro": {
+      "id": 80
+   },
+   "magnemite": {
+      "id": 81
+   },
+   "magneton": {
+      "id": 82
+   },
+   "farfetch'd": {
+      "id": 83
+   },
+   "doduo": {
+      "id": 84
+   },
+   "dodrio": {
+      "id": 85
+   },
+   "seel": {
+      "id": 86
+   },
+   "dewgong": {
+      "id": 87
+   },
+   "grimer": {
+      "id": 88
+   },
+   "muk": {
+      "id": 89
+   },
+   "shellder": {
+      "id": 90
+   },
+   "cloyster": {
+      "id": 91
+   },
+   "gastly": {
+      "id": 92
+   },
+   "haunter": {
+      "id": 93
+   },
+   "gengar": {
+      "id": 94
+   },
+   "onix": {
+      "id": 95
+   },
+   "drowzee": {
+      "id": 96
+   },
+   "hypno": {
+      "id": 97
+   },
+   "krabby": {
+      "id": 98
+   },
+   "kingler": {
+      "id": 99
+   },
+   "voltorb": {
+      "id": 100
+   },
+   "electrode": {
+      "id": 101
+   },
+   "exeggcute": {
+      "id": 102
+   },
+   "exeggutor": {
+      "id": 103
+   },
+   "cubone": {
+      "id": 104
+   },
+   "marowak": {
+      "id": 105
+   },
+   "hitmonlee": {
+      "id": 106
+   },
+   "hitmonchan": {
+      "id": 107
+   },
+   "lickitung": {
+      "id": 108
+   },
+   "koffing": {
+      "id": 109
+   },
+   "weezing": {
+      "id": 110
+   },
+   "rhyhorn": {
+      "id": 111
+   },
+   "rhydon": {
+      "id": 112
+   },
+   "chansey": {
+      "id": 113
+   },
+   "tangela": {
+      "id": 114
+   },
+   "kangaskhan": {
+      "id": 115
+   },
+   "horsea": {
+      "id": 116
+   },
+   "seadra": {
+      "id": 117
+   },
+   "goldeen": {
+      "id": 118
+   },
+   "seaking": {
+      "id": 119
+   },
+   "staryu": {
+      "id": 120
+   },
+   "starmie": {
+      "id": 121
+   },
+   "mr. mime": {
+      "id": 122
+   },
+   "scyther": {
+      "id": 123
+   },
+   "jynx": {
+      "id": 124
+   },
+   "electabuzz": {
+      "id": 125
+   },
+   "magmar": {
+      "id": 126
+   },
+   "pinsir": {
+      "id": 127
+   },
+   "tauros": {
+      "id": 128
+   },
+   "magikarp": {
+      "id": 129
+   },
+   "gyarados": {
+      "id": 130
+   },
+   "lapras": {
+      "id": 131
+   },
+   "ditto": {
+      "id": 132
+   },
+   "eevee": {
+      "id": 133
+   },
+   "vaporeon": {
+      "id": 134
+   },
+   "jolteon": {
+      "id": 135
+   },
+   "flareon": {
+      "id": 136
+   },
+   "porygon": {
+      "id": 137
+   },
+   "omanyte": {
+      "id": 138
+   },
+   "omastar": {
+      "id": 139
+   },
+   "kabuto (dome)": {
+      "id": 140
+   },
+   "kabutops": {
+      "id": 141
+   },
+   "aerodactyl": {
+      "id": 142
+   },
+   "snorlax": {
+      "id": 143
+   },
+   "articuno": {
+      "id": 144
+   },
+   "zapdos": {
+      "id": 145
+   },
+   "moltres": {
+      "id": 146
+   },
+   "dratini": {
+      "id": 147
+   },
+   "dragonair": {
+      "id": 148
+   },
+   "dragonite": {
+      "id": 149
+   },
+   "mewtwo": {
+      "id": 150
+   },
+   "mew": {
+      "id": 151
+   }
+}

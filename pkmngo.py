@@ -15,18 +15,23 @@ application = Flask(__name__)
 @application.route('/pokemongo/')
 def form():
 
-    pkmnSelectMarkup = pkmnSelect()
+    pkmndatalistmarkup = pkmndatalist()
 
-    return render_template('form.html', pkmnSelect=pkmnSelectMarkup)
+    return render_template('form.html', pkmndatalist=pkmndatalistmarkup)
 
 @application.route('/pokemongo/cp/', methods=["POST"])
 def cp():
 
     # get information from form.html
-    pkmnID = request.form["pokemonSelect"]
     actualCP = request.form["aCP"]
     hp = request.form["HP"]
     dust = request.form["DUST"]
+    pkmnIDph = request.form["selectPokemon"]
+    pkmnIDph = pkmnIDph.lower()
+
+    response = urllib.urlopen('http://chriskoh.io/static/ids.json')
+    iddata = json.load(response)
+    pkmnID = str(iddata[pkmnIDph]["id"])
 
     # load pokemon data as data
     response = urllib.urlopen('http://chriskoh.io/static/pokemon.json')
@@ -90,9 +95,9 @@ def cp():
         "family": data[pkmnID]["family"]
     }
 
-    pkmnSelectMarkup = pkmnSelect()
+    pkmndatalistmarkup = pkmndatalist()
  
-    return render_template('cp.html', chart=chart, chart2=evolveID1chart, chart3=evolveID2chart, ev1=evolveID1ivSets, ev2=evolveID2ivSets, ivSets=ivSets, pkmnSelect=pkmnSelectMarkup, pokemon=pokemon, stats=stats)
+    return render_template('cp.html', pkmndatalist=pkmndatalistmarkup, chart=chart, chart2=evolveID1chart, chart3=evolveID2chart, ev1=evolveID1ivSets, ev2=evolveID2ivSets, ivSets=ivSets, pokemon=pokemon, stats=stats)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')

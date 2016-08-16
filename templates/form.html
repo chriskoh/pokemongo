@@ -6,32 +6,44 @@
 
 	<body>
 
-		<h1>Pokemon Go IV</h1>
-        <div id="pokemon">
-            <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
+        <h1>Pokemon Go IV</h1>
 
-                <img height="750" width="500" border="0" src="http://chriskoh.io/images/background_fire.png" />
+        <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
 
-                <div id="pkmnselectdiv">
-                    <select id="pkmnselectbox" name="pokemonSelect" autofocus>
-                        {{pkmnSelect}} 
-                    </select>
-                </div>
 
-                <div id="cpdiv">
-                    <input id="cpbox" type="number" name="aCP" placeholder="CP">
-                </div>
+                <input list="test" name="pokemonSelect" placeholder="Name">
+                    <datalist id="test">
+                        {{pkmndatalist}}
+                    </datalist>
 
-                <div id="hpdiv">
-                    <input id="hpbox" type="number" name="HP" placeholder="HP">
-                </div>
+                <input type="number" name="aCP" placeholder="CP">
 
-                <div id="dustdiv">
-                    <input id="dustbox" type="number" name="DUST" placeholder="Dust"> 
-                </div>
+                <input type="number" name="HP" placeholder="HP">
 
-                <br /><input type="submit" >
-            </form>
-        </div>
+                <input type="number" name="DUST" placeholder="Dust"> 
+
+                <br /><br /><input type="submit" ><br />
+        </form>
+
+        <hr>
+        <h2>Stats</h2>
+        <p>Text</p>
+        <br />
+
+        <hr>
+        <h2>IVs (Initial Values)</h2>
+        <p>Text</p>
+        <br />
+
+        <hr>
+        <h2>CP Calculation</h2>
+        <p>Text</p>
+        <br />
+    
+        <hr>
+        <h2>HP Calculation</h2>
+        <p>Text</p>
+        <br />
+
 	</body>
 </html>
