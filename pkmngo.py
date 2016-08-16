@@ -26,7 +26,7 @@ def cp():
     actualCP = request.form["aCP"]
     hp = request.form["HP"]
     dust = request.form["DUST"]
-    pkmnIDph = request.form["selectPokemon"]
+    pkmnIDph = request.form["nameph"]
     pkmnIDph = pkmnIDph.lower()
 
     response = urllib.urlopen('http://chriskoh.io/static/ids.json')
@@ -92,7 +92,10 @@ def cp():
         "movement": data[pkmnID]["movement"],
         "quickMoves": data[pkmnID]["quickMoves"],
         "cinematicMoves": data[pkmnID]["cinematicMoves"],
-        "family": data[pkmnID]["family"]
+        "family": data[pkmnID]["family"],
+        "cp": actualCP,
+        "hp": hp,
+        "dust": dust
     }
 
     pkmndatalistmarkup = pkmndatalist()

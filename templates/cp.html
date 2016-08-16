@@ -26,20 +26,20 @@
                 <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
                     <div id="info" style="background-image: url('http://chriskoh.io/images/{{pokemon["type1"]}}.png');">
                         <div id="name">
-                            <input list="test" name="pokemonSelect" placeholder="Name">
+                            <input list="test" id="pkmnselectbox" name="nameph" value="{{pokemon['name']}}" autofocus>
 
                                 <datalist id="test">
                                     {{pkmndatalist}}
                                 </datalist>
                         </div>
                         <div id="cphp">
-                            <input id="cpbox" type="number" name="aCP" placeholder="CP">
+                            <input id="cpbox" type="number" name="aCP" value="{{pokemon['cp']}}">
                         </div>
                         <div id="cphp">
-                            <input id="hpbox" type="number" name="HP" placeholder="HP">
+                            <input id="hpbox" type="number" name="HP" value="{{pokemon['hp']}}">
                         </div>
                         <div id="cphp">
-                            <input id="dustbox" type="number" name="DUST" placeholder="Dust">
+                            <input id="dustbox" type="number" name="DUST" value="{{pokemon['dust']}}">
                         </div>
                         <div id="pkmnimg">
                             <img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/{{pokemon["lname"]}}.gif" />
