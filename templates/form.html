@@ -5,11 +5,8 @@
 	</head>
 
 	<body>
-
         <div id="boxwrapper">
-
             <div id="box">
-
                 <div id="inputbox">
                     <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
                         <input list="test" name="nameph" value="Omanyte" placeholder="Name">
@@ -22,7 +19,19 @@
                         <input type="submit" >
                     </form>
                 </div>
-    
+                <h3>Pokémon Go Base Stats</h3>
+                <p>Base stats are calculated using Generation VI data, with the following formulas</p>
+                <div id="formulas">
+                    <ul>
+                        <li><img id="image3" src="http://chriskoh.io/images/baseattack.gif" /></li>
+                        <li><img id="image3" src="http://chriskoh.io/images/basedefense.gif" /></li>
+                        <li><img id="image3" src="http://chriskoh.io/images/basestamina.gif" /></li>
+                    </ul>
+                </div>
+                <hr>
+                <h3>EVs (Effort Values)</h3>
+                <p>There is no recorded data to support the existance of Effort Values in Pokémon Go.</p>
+                <hr>
             </div>
         </div>
 	</body>
