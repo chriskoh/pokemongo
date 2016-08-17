@@ -33,16 +33,49 @@
                     <p>There is no recorded data to support the existance of Effort Values in Pokémon Go.</p>
                 <hr>
                     <h3>IVs (Initial Values)</h3>
-                    <p>IVs function like</p>
-                    <p>These states are</p>
+                    <p>IVs function like a Pokémon's "Genes", every stat has an IV ranging from 0 to 15 for each stat.</p>
+                    <p>These stats are provided randomly for every Pokémon, caught or hatched, and although as insignificant as 15 points may seem, they are required for Ace Trainers to obtain when searching Pokémon with perfect stats. On some occasions they are even the tipping point in a close matchup.</p>
                 <hr>
-                    <h3>Pokemon Go Stats IV Mod</h3>
-                    <p>Without IV's</p>
+                    <h3>Pokémon Go Stats IV Modification</h3>
+                    <p>Without IV's every Pokémon of the same species would have the same HP and CP when at the maximum level.</p>
                     <div id="formulas">
                         <ul>
-                            <li><img id="image3" src="http://chriskoh.io/images/baseattack.gif" /></li>
-                            <li><img id="image3" src="http://chriskoh.io/images/basedefense.gif" /></li>
-                            <li><img id="image3" src="http://chriskoh.io/images/basestamina.gif" /></li>
+                            <li><img id="image3" src="http://chriskoh.io/images/attack.gif" /></li>
+                            <li><img id="image3" src="http://chriskoh.io/images/defense.gif" /></li>
+                            <li><img id="image3" src="http://chriskoh.io/images/stamina.gif" /></li>
+                        </ul>
+                    </div>
+                    <p><i>CP Multiplier - CP Multiplier is a fixed valued, based on Pokémon level.</i></p>
+                    <p><i>Pokémon Level - Pokémon Level can be assumed within ~2.5 levels based on the current "Power Up" dust cost.</i></p>
+                <hr>
+                    <h3>IV Calculations</h3>
+                    <p>Knowing the CP formula (More on this in the next section), and using the guess and check method we can calculate the possible IV combinations for any given Pokémon.</p>
+                    <div id="formulas">
+                        <ul>
+                            <li><img id="image3" src="http://chriskoh.io/images/cp.gif" /></li>
+                        </ul>
+                    </div>
+                    <p>Lets break that down a little more...</p>
+                    <div id="formulas">
+                        <ul>
+                            <li><img id="image3" src="http://chriskoh.io/images/cpbreakdown.gif" /></li>
+                        </ul>
+                    </div>
+                    <p>Knowing that CP, Base Stamina, Base Attack, Base Defense and CP Multiplier are static values (Where CP Multiplier has 2 possible values based on Pokémon level). We can guess and check for IVs in the range of 0-15, to find all possible combinations that match the Pokémon's CP.</p>
+                <hr>
+                    <h3>CP Calculations</h3>
+                    <p>Now that we have possible IV's, we can take the sets with the highest and lowest average to assume the best and worst possible sets. After plugging those IV sets back in to the broken down CP formula, we can scale the CP Multiplier to calculate the CP range for a paritcular Pokémon at any given level. We can also use a set of 15 Stamina, 15 Attack, 15 Defense to assume the best possible CP and 0 Stamina, 0 Attack, 0 Defense to assume the worst possible CP.</p>
+                    <div id="formulas">
+                        <ul>
+                            <li><img id="image3" src="http://chriskoh.io/images/cpbreakdown.gif" /></li>
+                        </ul>
+                    </div>
+                <hr>
+                    <h3>HP Calculations</h3>
+                    <p>After all the information we have gathered above we can easily calculate the possible HP ranges using the following formula</p>
+                    <div id="formulas">
+                        <ul>
+                            <li><img id="image3" src="http://chriskoh.io/images/hp.gif" /></li>
                         </ul>
                     </div>
             </div>
