@@ -6,59 +6,24 @@
 
 	<body>
 
-        <h1>Pokemon Go IV</h1>
+        <div id="boxwrapper">
 
-        <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
+            <div id="box">
 
-
-                <input list="test" name="nameph" placeholder="Name">
-                    <datalist id="test">
-                        {{pkmndatalist}}
-                    </datalist>
-
-                <input type="number" name="aCP" placeholder="CP">
-
-                <input type="number" name="HP" placeholder="HP">
-
-                <input type="number" name="DUST" placeholder="Dust"> 
-
-                <br /><br /><input type="submit" ><br />
-        </form>
-
-        <hr>
-        <h2>Pokémon Go Base Stats</h2>
-        <p>Text</p>
-        <br />
-        
-        <hr>
-        <h2>EVs (Effort Values)</h2>
-        <p>Text</p>
-        <br />
-        
-        <hr>
-        <h2>IVs (Initial Values)</h2>
-        <p>Text</p>
-        <br />
-
-        <hr>
-        <h2>Pokémon Go Stats IV Modification</h2>
-        <p>Text</p>
-        <br />
-
-        <hr>
-        <h2>IV Calculation</h2>
-        <p>Text</p>
-        <br />
-
-        <hr>
-        <h2>CP Calculation</h2>
-        <p>Text</p>
-        <br />
+                <div id="inputbox">
+                    <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
+                        <input list="test" name="nameph" value="Omanyte" placeholder="Name">
+                            <datalist id="test">
+                                {{pkmndatalist}}
+                            </datalist>
+                        <input type="number" name="aCP" value="631" placeholder="CP">
+                        <input type="number" name="HP" value="50" placeholder="HP">
+                        <input type="number" name="DUST" value="2500" placeholder="Dust"> 
+                        <input type="submit" >
+                    </form>
+                </div>
     
-        <hr>
-        <h2>HP Calculation</h2>
-        <p>Text</p>
-        <br />
-
+            </div>
+        </div>
 	</body>
 </html>
