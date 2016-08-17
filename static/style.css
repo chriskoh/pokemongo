@@ -95,6 +95,23 @@
     float: left;
     text-align:center;
 }
+#formname {
+    height: 10%;
+    width: 25%;
+    float: left;
+    text-align:center;
+}
+#formsubmit {
+    height: 10%;
+    width: 15%;
+    float: left;
+    text-align:center;
+}
+#formsubmitbtn {
+    font-size:25px;
+    height: 50%;
+    width: 100%;
+}
 #cphp {
     height: 10%;
     width: 20%;
@@ -156,16 +173,20 @@
     height: 100%;
     width: 100%;
     overflow: scroll;
+    background-color: #99ebff;
 }
 #box {
-    height: 100%;
     width: 60%;
     margin: 0 auto;
     padding-top: 2cm;
-    border: 1px solid black;
+    background-color: #F5F5DC;
 }
 #inputbox {
     height: 5%;
+    width: 100%;
+    float: left;
+}
+#forminputbox {
     width: 100%;
     float: left;
 }
@@ -175,4 +196,7 @@
 #image3 {
     max-width:100%;
     max-height:100%;
+}
+#indented {
+    padding-left: 1cm;
 }
