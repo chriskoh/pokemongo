@@ -10,19 +10,31 @@
                 <div id="forminputbox">
                     <form method="post" action="{{ url_for("cp") }}" id="pkmnSelect" style="position: relative;">
                         <div id="formname">
-                            <input list="test" id="pkmnselectbox" name="nameph" value="Omanyte" autofocus>
+                            <input list="test" id="pkmnselectbox" name="nameph" value="Pikachu" autofocus>
                                 <datalist id="test">
                                     {{pkmndatalist}}
                                 </datalist>
+                            <div id="formlabel">
+                                Name
+                            </div>
                         </div>
                         <div id="cphp">
-                            <input id="cpbox" type="number" name="aCP" value="631">
+                            <input id="cpbox" type="number" name="aCP" value="450">
+                            <div id="formlabel">
+                                CP
+                            </div>
                         </div>
                         <div id="cphp">
-                            <input id="hpbox" type="number" name="HP" value="50">
+                            <input id="hpbox" type="number" name="HP" value="45">
+                            <div id="formlabel">
+                                HP
+                            </div>
                         </div>
                         <div id="cphp">
                             <input id="dustbox" type="number" name="DUST" value="2500">
+                            <div id="formlabel">
+                                Dust
+                            </div>
                         </div>
                         <div id="formsubmit">
                             <input id="formsubmitbtn" type="submit" >

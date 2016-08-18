@@ -28,22 +28,22 @@
 } 
 #pkmnselectbox {
     font-size: 25px;
-    height: 50%;
+    height: 60%;
     width: 100%;
 }
 #cpbox {
     font-size: 25px;
-    height: 50%;
+    height: 60%;
     width: 100%;
 }
 #hpbox {
     font-size: 25px;
-    height: 50%;
+    height: 60%;
     width: 100%;
 }
 #dustbox {
     font-size: 25px;
-    height: 50%;
+    height: 60%;
     width: 100%;
 }
 .data {
@@ -60,6 +60,7 @@
     width: 100%;
     overflow: hidden;
     padding: 25px;
+    background-color: #E0F1FF;
 }
 #databox {
     height: 90%;
@@ -67,9 +68,11 @@
     position: relative;
 }
 #info {
-    height: 100%;
+    height: 99%;
     width: 33%;
     float: left;
+    background-size: 100%;
+    background-position: 0 40%;
 }
 #base {
     display: flex;
@@ -77,6 +80,18 @@
     height: 33%;
     width: 33%;
     float: left;
+    background-color: #FDF9E5;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#basebottom {
+    display: flex;
+    justify-content: center;
+    height: 33%;
+    width: 33%;
+    float: left;
+    background-color: #FDF9E5;
+    border-left: 1px solid black;
 }
 #basecenter {
     align-self:center;
@@ -88,15 +103,28 @@
     height: 33%;
     width: 33%;
     float: left;
+    background-color: #FDF9E5;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#basechartbottom {
+    height: 33%;
+    width: 33%;
+    float: left;
+    background-color: #FDF9E5;
+    border-left: 1px solid black;
 }
 #name {
-    height: 10%;
+    background-color: #FDF9E5;
+    position: relative;
+    height: 8%;
     width: 40%;
     float: left;
     text-align:center;
 }
 #formname {
-    height: 10%;
+    position: relative;
+    height: 8%;
     width: 25%;
     float: left;
     text-align:center;
@@ -113,24 +141,37 @@
     width: 100%;
 }
 #cphp {
-    height: 10%;
+    position: relative;
+    background-color: #FDF9E5;
+    height: 8%;
     width: 20%;
     float: left;
     text-align: center;
 }
 #pkmnimg {
-    height: 40%;
+    position: relative;
+    height: 45%;
     width: 100%;
     float: left;
     text-align:center;
 }
 #stats {
     height: 15%;
-    width: 33.334%;
+    width: 33%;
     float: left;
     position: relative;
     text-align: center;
-    background-color: #F5F5DC;
+    background-color: #FDF9E5;
+}
+#statsmiddle {
+    height: 15%;
+    width: 33.5%;
+    float: left;
+    position: relative;
+    text-align: center;
+    background-color: #FDF9E5;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 #catch {
     height: 15%;
@@ -138,21 +179,35 @@
     float:left;
     position: relative;
     text-align:center;
-    background-color: #F5F5DC;
+    background-color: #FDF9E5;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#catchright {
+    height: 15%;
+    width: 49.7%;
+    float:left;
+    position: relative;
+    text-align:center;
+    background-color: #FDF9E5;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
 #calculate {
-    height: 10%;
+    height: 7%;
     width: 100%;
     float: left;
     text-align: center;
-    background-color: #F5F5DC;
+    background-color: #FDF9E5;
 }
 #ivpct {
     height: 10%;
     width: 100%;
     float: left;
     text-align: center;
-    background-color: #F5F5DC;
+    background-color: #FDF9E5;
+    border-bottom: 1px solid black;
 }
 #statuslabel {
     height: 25%;
@@ -165,6 +220,7 @@
     width: 100%;
     top: 0;
     position:absolute;
+    padding-top: 0.5cm;
 }
 #boxwrapper{
     position:fixed;
@@ -173,13 +229,13 @@
     height: 100%;
     width: 100%;
     overflow: scroll;
-    background-color: #99ebff;
+    background-color: #E0F1FF;
 }
 #box {
     width: 60%;
     margin: 0 auto;
     padding-top: 2cm;
-    background-color: #F5F5DC;
+    background-color: #FDF9E5;
 }
 #inputbox {
     height: 5%;
@@ -199,4 +255,16 @@
 }
 #indented {
     padding-left: 1cm;
+}
+#formlabel {
+    height: 40%;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+#pkmngif {
+    transform: scale(2,2);
+    bottom: 20%;
+    left: 45%;
+    position: absolute;
 }

@@ -31,7 +31,7 @@ def cp():
 
     response = urllib.urlopen('http://chriskoh.io/static/ids.json')
     iddata = json.load(response)
-    pkmnID = str(iddata[pkmnIDph]["id"])
+    pkmnID = "{0:0>3}".format(iddata[pkmnIDph]["id"])
 
     # load pokemon data as data
     response = urllib.urlopen('http://chriskoh.io/static/pokemon.json')

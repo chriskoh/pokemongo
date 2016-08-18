@@ -10,6 +10,7 @@ def ivChart(name, bestChart, possibleChart, idnum):
     chartname = "chart" + idnum
 
     chart =         "var " + chartname + " = new CanvasJS.Chart('" + chartname + "',{" \
+                    "backgroundColor: '#FDF9E5'," \
                     "title:{" \
                         "text: '" + name + "'," \
                     "}," \

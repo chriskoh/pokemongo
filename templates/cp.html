@@ -31,18 +31,30 @@
                                 <datalist id="test">
                                     {{pkmndatalist}}
                                 </datalist>
+                            <div id="formlabel">
+                                Name
+                            </div>
                         </div>
                         <div id="cphp">
                             <input id="cpbox" type="number" name="aCP" value="{{pokemon['cp']}}">
+                            <div id="formlabel">
+                                CP
+                            </div>
                         </div>
                         <div id="cphp">
                             <input id="hpbox" type="number" name="HP" value="{{pokemon['hp']}}">
+                            <div id="formlabel">
+                                HP
+                            </div>
                         </div>
                         <div id="cphp">
                             <input id="dustbox" type="number" name="DUST" value="{{pokemon['dust']}}">
+                            <div id="formlabel">
+                                Dust
+                            </div>
                         </div>
                         <div id="pkmnimg">
-                            <img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/{{pokemon["lname"]}}.gif" />
+                            <img id="pkmngif" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/{{pokemon["lname"]}}.gif" />
                         </div>
                         <div id="ivpct">
                             <h1>Initial Values - {{stats["pctPerfect"]}}% Perfect</h1>
@@ -55,8 +67,8 @@
                                 Attack
                             </div>
                         </div>
-                        <div id="stats">
-                            <div id="statsValue">
+                        <div id="statsmiddle">
+                            <div id="statusValue">
                                 <h1>{{pokemon["baseDefense"]}}</h1>
                             </div>
                             <div id="statuslabel">
@@ -64,7 +76,7 @@
                             </div>
                         </div>
                         <div id="stats">
-                            <div id="statsValue">
+                            <div id="statusValue">
                                 <h1>{{pokemon["baseStamina"]}}</h1>
                             </div>
                             <div id="statuslabel">
@@ -79,7 +91,7 @@
                                 Catch Rate
                             </div>
                         </div>
-                        <div id="catch">
+                        <div id="catchright">
                             <div id="statusValue">
                                 <h1>{{pokemon["rateFlee"]}}%</h1>
                             </div>
@@ -109,7 +121,7 @@
                     </div>
                 </div>
                 <div id="basechart">
-                    <div id="chart0" style="height: 100%; width: 100%;"></div>
+                    <div id="chart0" style="height: 99%; width: 100%;"></div>
                 </div>
                 <div id="base">
                     <div id="basecenter">
@@ -117,15 +129,15 @@
                     </div>
                 </div>
                 <div id="basechart">
-                    <div id="chart1" style="height: 100%; width: 100%;"></div>
+                    <div id="chart1" style="height: 99%; width: 100%;"></div>
                 </div>
-                <div id="base">
+                <div id="basebottom">
                     <div id="basecenter">
                         {{ev2}}
                     </div>
                 </div>
-                <div id="basechart">
-                    <div id="chart2" style="height: 100%; width: 100%;"></div>
+                <div id="basechartbottom">
+                    <div id="chart2" style="height: 99%; width: 100%;"></div>
                 </div>
             </div>
         </div>
