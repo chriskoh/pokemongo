@@ -76,19 +76,21 @@
 }
 #base {
     display: flex;
+    box-sizing: border-box;
     justify-content: center;
-    height: 33%;
-    width: 33%;
+    height: 33.33%;
+    width: 33.33%;
     float: left;
     background-color: #FDF9E5;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
 }
 #basebottom {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
-    height: 33%;
-    width: 33%;
+    height: 33.334%;
+    width: 33.334%;
     float: left;
     background-color: #FDF9E5;
     border-left: 1px solid black;
@@ -100,16 +102,18 @@
     margin: 0 auto;
 }
 #basechart {
-    height: 33%;
-    width: 33%;
+    height: 33.33%;
+    box-sizing: border-box;
+    width: 33.33%;
     float: left;
     background-color: #FDF9E5;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
 }
 #basechartbottom {
-    height: 33%;
-    width: 33%;
+    box-sizing: border-box;
+    height: 33.334%;
+    width: 33.334%;
     float: left;
     background-color: #FDF9E5;
     border-left: 1px solid black;
@@ -157,7 +161,7 @@
 }
 #stats {
     height: 15%;
-    width: 33%;
+    width: 33.334%;
     float: left;
     position: relative;
     text-align: center;
@@ -165,7 +169,8 @@
 }
 #statsmiddle {
     height: 15%;
-    width: 33.5%;
+    box-sizing: border-box;
+    width: 33.334%;
     float: left;
     position: relative;
     text-align: center;
@@ -176,6 +181,7 @@
 #catch {
     height: 15%;
     width: 50%;
+    box-sizing: border-box;
     float:left;
     position: relative;
     text-align:center;
@@ -185,7 +191,8 @@
 }
 #catchright {
     height: 15%;
-    width: 49.7%;
+    box-sizing: border-box;
+    width: 50%;
     float:left;
     position: relative;
     text-align:center;
@@ -203,6 +210,7 @@
 }
 #ivpct {
     height: 10%;
+    box-sizing: border-box;
     width: 100%;
     float: left;
     text-align: center;
