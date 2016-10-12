@@ -60,7 +60,7 @@
     width: 100%;
     overflow: hidden;
     padding: 25px;
-    background-color: #E0F1FF;
+    background-color: #DADFE1;
 }
 #databox {
     height: 90%;
@@ -237,7 +237,7 @@
     height: 100%;
     width: 100%;
     overflow: scroll;
-    background-color: #E0F1FF;
+    background-color: #DADFE1;
 }
 #box {
     width: 60%;
