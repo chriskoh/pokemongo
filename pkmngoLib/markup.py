@@ -5,6 +5,23 @@ import urllib
 import json
 from flask import Markup
 
+def printChart(chartName):
+
+    chart = "<div id='" + chartName + "' style='height: 99%; width: 100%;'></div>"
+
+    chartMarkup = Markup(chart)
+
+    return chartMarkup
+
+def noChart():
+
+    chart = 'No evolution data'
+
+    chartMarkup = Markup(chart)
+
+    return chartMarkup
+
+
 def ivChart(name, bestChart, possibleChart, idnum):
 
     chartname = "chart" + idnum

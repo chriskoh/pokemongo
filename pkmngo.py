@@ -55,6 +55,10 @@ def cp():
         evolveID1Stats = calcEvolveStats(data[evolveID1]["baseAttack"], data[evolveID1]["baseDefense"], data[evolveID1]["baseStamina"], evolveID1Name, stats["possibleBEST"], stats["possibleWORST"])
         evolveID1ivSets = printEvolveIVs(evolveID1Stats, evolveID1Name)
         evolveID1chart = ivChart(data[evolveID1]["name"], evolveID1Stats["bestChart"], evolveID1Stats["possibleChart"], "1")
+        printChart1 = printChart('chart1')
+        printChart2 = printChart('chart2')
+        noChart1 = ''
+        noChart2 = ''
         
         if data[evolveID1]["candyToEvolve"] != 0:
             evolveID2 = int(evolveID1) + 1
@@ -63,15 +67,23 @@ def cp():
             evolveID2Stats = calcEvolveStats(data[evolveID2]["baseAttack"], data[evolveID2]["baseDefense"], data[evolveID2]["baseStamina"], evolveID2Name, stats["possibleBEST"], stats["possibleWORST"])
             evolveID2ivSets = printEvolveIVs(evolveID2Stats, evolveID2Name)
             evolveID2chart = ivChart(data[evolveID2]["name"], evolveID2Stats["bestChart"], evolveID2Stats["possibleChart"], "2")
+            printChart2 = printChart('chart2')
+            noChart2 = ''
         else:
             evolveID2ivSets = ''
             evolveID2chart = ''
+            printChart2 = ''
+            noChart2 = noChart()
 
     else:
         evolveID1ivSets = ''
         evolveID2ivSets = ''
         evolveID1chart = ''
         evolveID2chart = ''
+        printChart2 = ''
+        printChart1 = ''
+        noChart1 = noChart()
+        noChart2 = noChart()
 
     catchrate = "{:.2f}".format((data[pkmnID]["rateCapture"]) * 100)
     fleerate = "{:.2f}".format((data[pkmnID]["rateFlee"]) * 100)
@@ -100,7 +112,7 @@ def cp():
 
     pkmndatalistmarkup = pkmndatalist()
  
-    return render_template('cp.html', pkmndatalist=pkmndatalistmarkup, chart=chart, chart2=evolveID1chart, chart3=evolveID2chart, ev1=evolveID1ivSets, ev2=evolveID2ivSets, ivSets=ivSets, pokemon=pokemon, stats=stats)
+    return render_template('cp.html', printchart1=printChart1, printchart2=printChart2, nochart1=noChart1, nochart2=noChart2, pkmndatalist=pkmndatalistmarkup, chart=chart, chart2=evolveID1chart, chart3=evolveID2chart, ev1=evolveID1ivSets, ev2=evolveID2ivSets, ivSets=ivSets, pokemon=pokemon, stats=stats)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')
