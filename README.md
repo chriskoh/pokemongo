@@ -26,11 +26,11 @@ Without IV's every Pokémon of the same species would have the same HP and CP wh
 
 
 
-#CP Multiplier - CP Multiplier is a fixed valued, based on Pokémon level.
+CP Multiplier - CP Multiplier is a fixed valued, based on Pokémon level.
 
-#Pokémon Level - Pokémon Level can be assumed within ~2.5 levels based on the current "Power Up" dust cost.
+Pokémon Level - Pokémon Level can be assumed within ~2.5 levels based on the current "Power Up" dust cost.
 
-#IV Calculations
+IV Calculations
 
 Knowing the CP formula (More on this in the next section), and using the guess and check method we can calculate the possible IV combinations for any given Pokémon.
 
