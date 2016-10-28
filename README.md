@@ -1,4 +1,3 @@
-# pokemongo
 
 #Pokémon Go Base Stats
 
