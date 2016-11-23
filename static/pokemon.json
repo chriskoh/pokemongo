@@ -3,7 +3,7 @@
       "name":"Bulbasaur",
       "baseStamina":90,
       "baseAttack":126,
-      "baseDefense":126,
+      "baseDefense":125,
       "type1":"GRASS",
       "type2":"POISON",
       "rateCapture":0.1599999964,
